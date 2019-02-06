@@ -1,0 +1,49 @@
+.logo {
+  width: 125px;
+  margin-right: 50px; }
+
+.navbar {
+  width: 100%;
+  background: #2B30B3; }
+  .navbar .nav-link {
+    color: #fff;
+    font-family: 'Montserrat', sans-serif; }
+  .navbar .nav-item {
+    padding: 0 1rem; }
+    @media (max-width: 34em) {
+      .navbar .nav-item {
+        padding: 0; } }
+
+.nav {
+  width: 100%;
+  padding-top: 15px;
+  justify-content: center; }
+  .nav .nav-link {
+    color: #737373;
+    font-family: 'Montserrat Semi-bold', sans-serif; }
+  .nav .nav-item {
+    padding: 0 1rem; }
+    @media (max-width: 34em) {
+      .nav .nav-item {
+        padding: 0; } }
+
+.search-bar {
+  width: 100%;
+  display: flex; }
+
+.foot {
+  width: 100%;
+  background: #2B30B3;
+  color: #fff;
+  position: absolute;
+  bottom: 0; }
+  .foot .foot-link {
+    color: #fff;
+    font-family: 'Montserrat bold', sans-serif; }
+  .foot .footer-item {
+    padding: 0 1rem; }
+    @media (max-width: 34em) {
+      .foot .footer-item {
+        padding: 0; } }
+
+/*# sourceMappingURL=style.css.map */

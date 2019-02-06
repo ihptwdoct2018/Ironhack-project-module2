@@ -1,16 +1,84 @@
+<!-- layout.hbs -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>{{title}}</title>
-  <link rel="stylesheet" href="/stylesheets/style.css" />
+  <meta charset="utf-8">
+    <title>OSS Vendelo!</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link rel="stylesheet" href="stylesheets/style.css" type="text/css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
 </head>
 <body>
+  
+<nav class="navbar navbar-expand-lg">
+  <a class="navbar-brand" href="#"><img src="/images/logo.png" class="logo"></a>
+ 
+        <div class="collapse navbar-collapse" class="" id="">
 
-  {{{body}}}
+            <form action="" class="search-bar">
+              <input class="form-control mr-sm-2" type="search" placeholder="Busca un producto"> 
+              <button class="btn btn-primary" type="submit">Buscar</button>   
+            </form>
+            
+        </div>
+        <div class="nav-icons">
+              <ul class="navbar-nav mr-auto">
+                  <li class="nav-item"><a class="nav-link" href="#">Registrarse</a></li>
+                  <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-user"></i></a></li>
+                  <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-shopping-cart"></i></a></li>
+                  <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-store"></i></a></li>
+              </ul>
+        </div>
+</nav>
 
-  <script src="/javascripts/script.js"></script>
+<header>
+        <div>
+              <ul class="nav">
+                <li class="nav-item"><a href="#" class="nav-link">Ropa y Calzado</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Hogar y Decoración</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Joyería y Complementos</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Juegos y Ocio</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Arte y Colección</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Vintage</a></li>
+              </ul>
+              <hr>
+          </div>
+</header>
+
+
+
+
+
+
+  {{{ body }}}
+
+
+
+
+
+<!-- Footer -->
+<footer class="page-footer">    
+            <div class="foot">
+                <ul class="foot-links">
+                      <li class="footer-item"><a class="foot-link" href="#">Vende</a></li>
+                      <li class="footer-item"><a class="foot-link" href="#">Compra</a></li>
+                      <li class="footer-item"><a class="foot-link" href="#">Acerca de Oss</a></li>
+                      <li class="footer-item"><a class="foot-link" href="#">Aviso de privacidad</a></li>
+                      <li class="footer-item"><a class="foot-link" href="#">Condiciones de usod</a></li>
+                </ul>
+
+              <div class="social-icons">
+                    <a class="fb-ic"><i class="fab fa-facebook-f"></i></a>
+                    <a class="tw-ic"><i class="fab fa-twitter"> </i></a>
+                    <a class="ins-ic"><i class="fab fa-instagram"> </i></a>  
+                    <a class="pin-ic"><i class="fab fa-pinterest"> </i></a>
+              </div>
+              <div class="footer-copyright text-right py-6">© 2019 Oss Inc.</div>
+          </div>
+  </footer>
+  
+
 </body>
 </html>

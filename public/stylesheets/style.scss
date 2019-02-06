@@ -1,8 +1,65 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+
+
+.logo{
+  width: 125px;
+  margin-right: 50px;
 }
 
-a {
-  color: #00B7FF;
+.navbar {
+  width:100%;
+  background: #2B30B3;
+  .nav-link {
+      color: #fff;
+      font-family: 'Montserrat', sans-serif;
+  }
+  .nav-item {
+      padding: 0 1rem;
+
+      @media(max-width: 34em) {
+          padding: 0;
+      }
+  }
+}
+
+.nav {
+  width:100%;
+  padding-top: 15px;
+  justify-content: center;
+  .nav-link {
+      color: #737373;  
+      font-family: 'Montserrat Semi-bold', sans-serif;
+  }
+  .nav-item {
+      padding: 0 1rem;
+
+      @media(max-width: 34em) {
+          padding: 0;
+      }
+  }
+}
+
+.search-bar{
+  width: 100%;
+  display: flex;
+}
+
+.foot{
+  width:100%;
+  background: #2B30B3;
+  color: #fff;
+
+  
+  .foot-link {
+      color: #fff;
+      font-family: 'Montserrat bold', sans-serif;
+  }
+  .footer-item {
+      padding: 0 1rem;
+
+      @media(max-width: 34em) {
+          padding: 0;
+      }
+  }
+  position: absolute;
+  bottom: 0,
 }

@@ -2,11 +2,12 @@ const mongoose = require('mongoose');
 const Schema   = mongoose.Schema;
 
 const anunSchema = new Schema({
-  fotes: [String],
+  fotos: [String],
   titulo:  String,
   descripcion: String,
   precio: Number,
   Stock: Number,
+  especificaciones: String,
   categoria: String,
   categoria_padre: String,
   subcategoria: String,
