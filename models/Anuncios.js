@@ -21,7 +21,5 @@ const anunSchema = new Schema({
   comentarios:[String]
 });
 
-const Anuncio = mongoose.model('anuncios', anunSchema);
-module.exports = Anuncio;
-
-
+const Anuncios = mongoose.model('Anuncios', anunSchema);
+module.exports = Anuncios;
