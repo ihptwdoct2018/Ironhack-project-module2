@@ -6,12 +6,8 @@
   background: #2B30B3; }
   .navbar .nav-link {
     color: #fff;
-<<<<<<< HEAD
     font-family: 'Montserrat', sans-serif;
     font-size: 14px; }
-=======
-    font-family: 'Montserrat', sans-serif; }
->>>>>>> 72de58b015cd1f350c415179be05317f0e23ec75
   .navbar span {
     color: #fff; }
 
@@ -42,7 +38,6 @@
   #myFooter .social-icons {
     float: right; }
   #myFooter .foot-link {
-<<<<<<< HEAD
     color: #fff;
     padding-right: 5px;
     font-size: 18px; }
@@ -52,21 +47,10 @@
     margin-left: 20px; }
   #myFooter .cuote {
     color: #fff;
-=======
-    color: #fff;
-    padding-right: 5px; }
-  #myFooter .logoFooter {
-    width: 80px;
-    float: left;
-    margin-left: 20px; }
-  #myFooter .cuote {
-    color: #fff;
->>>>>>> 72de58b015cd1f350c415179be05317f0e23ec75
     font-size: 10px; }
   #myFooter .copy {
     font-size: 10px;
     float: right; }
-<<<<<<< HEAD
 
 #myCarousel .carousel-inner img {
   width: 100%;
@@ -83,7 +67,5 @@
 
 #myCarousel .carousel-caption h1 {
   font-family: 'Montserrat bold', sans-serif; }
-=======
->>>>>>> 72de58b015cd1f350c415179be05317f0e23ec75
 
 /*# sourceMappingURL=style.css.map */
