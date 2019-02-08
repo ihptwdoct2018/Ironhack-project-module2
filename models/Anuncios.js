@@ -6,12 +6,11 @@ const anunSchema = new Schema({
   titulo:  String,
   descripcion: String,
   precio: Number,
-  Stock: Number,
-  especificaciones: String,
+  stock: Number,
   categoria: String,
-  categoria_padre: String,
+  subcategoria_padre: String,
   subcategoria: String,
-  tienda: {type: String},
+  tienda_id: {type: Schema.ObjectId, ref: "Tienda"},
   envio: {
     origen: String,
     tiempo: Number,
@@ -19,7 +18,9 @@ const anunSchema = new Schema({
     transporte: String
   },
   calificacion: Number,
-  comentarios:[String]
+  comentarios:[{type: Schema.ObjectId, ref: "Comentarios"}],
+  megusta: Number,
+  activo: Boolean
 });
 
 const Anuncios = mongoose.model('Anuncios', anunSchema);

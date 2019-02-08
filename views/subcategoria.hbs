@@ -1,0 +1,24 @@
+<section class="container">
+<div class="row justify-content-md-center">
+  {{#each subcategoria}}
+    <!--<a href="/cat/{{this.identificador}}">{{this.subcategoria}}</a>-->
+    <div class="card col-lg-3 col-md-4 col-sm-12 col-12 text-white bg-dark" style="width: 100%; margin-right: 20px; margin-lefth: 20px; margin-bottom: 20px">
+      <a href="/cat/{{this.identificador}}"><img class="card-img-top" src="{{this.foto}}" alt="Card image cap"></a>
+      <div class="card-body">
+        <a href="/cat/{{this.identificador}}" style="text-align: center; text-decoration: none; color: white"><h5 class="card-title">{{this.subcategoria}}</h5></a>
+        <!--<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>-->
+      </div>
+      <!--<ul class="list-group list-group-flush">
+        <li class="list-group-item">Cras justo odio</li>
+        <li class="list-group-item">Dapibus ac facilisis in</li>
+        <li class="list-group-item">Vestibulum at eros</li>
+      </ul>
+      <div class="card-body">
+        <a href="#" class="card-link">Card link</a>
+        <a href="#" class="card-link">Another link</a>
+      </div>-->
+    </div>
+  {{/each}}
+</div>
+<br><br><br>
+</section>
