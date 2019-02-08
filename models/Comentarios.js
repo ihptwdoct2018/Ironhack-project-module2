@@ -8,7 +8,5 @@ const comentSchema = new Schema({
   respuesta: String,
 });
 
-const Comentario = mongoose.model('comentarios', comentSchema);
-module.exports = Comentario;
-
-
+const Comentarios = mongoose.model('Comentarios', comentSchema);
+module.exports = Comentarios;

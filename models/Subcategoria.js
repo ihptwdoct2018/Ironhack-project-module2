@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const Schema   = mongoose.Schema;
 
 const subcatSchema = new Schema({
-  nombre: String,
+  subcategoria: String,
   foto:  String,
   identificador: String,
   identificador_padre: String,

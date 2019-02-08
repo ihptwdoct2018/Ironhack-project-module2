@@ -8,7 +8,10 @@ const hbs          = require('hbs');
 const mongoose     = require('mongoose');
 const logger       = require('morgan');
 const path         = require('path');
+<<<<<<< HEAD
 
+=======
+>>>>>>> 72de58b015cd1f350c415179be05317f0e23ec75
 
 mongoose
   .connect(process.env.MONGODB, {useNewUrlParser: true})
@@ -51,8 +54,8 @@ app.locals.title = 'Express - Generated with IronGenerator';
 
 
 
-const homepage = require('./routes/homepage');
-app.use('/', homepage);
+const navegar = require('./routes/navegar');
+app.use('/', navegar);
 
 
 const router = require('./routes/auth');
