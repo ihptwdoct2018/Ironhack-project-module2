@@ -8,7 +8,7 @@
     "dev-windows": "nodemon ./bin/www"
   },
   "dependencies": {
-    "bcrypt": "^3.0.3",
+    "bcrypt": "^3.0.4",
     "body-parser": "^1.18.3",
     "connect": "^3.6.6",
     "connect-flash": "^0.1.1",

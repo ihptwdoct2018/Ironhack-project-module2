@@ -6,35 +6,25 @@
 }
 
 .navbar {
-  width:100%;
   background: #2B30B3;
   .nav-link {
       color: #fff;
       font-family: 'Montserrat', sans-serif;
+      font-size: 14px;
   }
-  .nav-item {
-      padding: 0 1rem;
-
-      @media(max-width: 34em) {
-          padding: 0;
-      }
+  span{
+    color: #fff;
   }
 }
 
 .nav {
   width:100%;
   padding-top: 15px;
-  justify-content: center;
+  
   .nav-link {
       color: #737373;  
       font-family: 'Montserrat Semi-bold', sans-serif;
-  }
-  .nav-item {
-      padding: 0 1rem;
-
-      @media(max-width: 34em) {
-          padding: 0;
-      }
+      text-align: center;
   }
 }
 
@@ -43,23 +33,71 @@
   display: flex;
 }
 
-.foot{
-  width:100%;
-  background: #2B30B3;
-  color: #fff;
+#myFooter {
+    width:100%;
+    background: #2B30B3;
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
 
-  
-  .foot-link {
-      color: #fff;
-      font-family: 'Montserrat bold', sans-serif;
-  }
-  .footer-item {
-      padding: 0 1rem;
+    .wraper{
+        display: flex;
+    }
 
-      @media(max-width: 34em) {
-          padding: 0;
-      }
-  }
-  position: absolute;
-  bottom: 0,
+    .row{
+        font-size: 12px;
+        list-style-type: none;
+        
+    }
+
+    .bottom-link{
+        color:#fff;
+    }
+
+    .social-icons{
+        float: right;
+    }
+
+    .foot-link{
+        color:#fff;
+        padding-right: 5px;
+        font-size: 18px;
+    }
+
+    .logoFooter{
+        width: 80px;
+        float: left;
+        margin-left: 20px;
+    }
+
+    .cuote{
+        color: #fff;
+        font-size: 10px;
+    }
+
+    .copy{
+        font-size: 10px;
+        float: right;
+    }
+}
+
+
+
+
+
+#myCarousel{
+
+    .carousel-inner img {
+        width: 100%; /* Set width to 100% */
+        min-height:200px;
+        max-height: 400px;
+        background-color: #b6afaf6b; 
+    }
+
+    .carousel-caption {
+        color:rgb(255, 255, 255);
+        font-family: 'Montserrat Semi-bold', sans-serif;
+        font-size: 20px;
+        text-shadow: 2px 2px 2px #2B30B3;
+    }
+    .carousel-caption h1{ font-family: 'Montserrat bold', sans-serif; }
 }

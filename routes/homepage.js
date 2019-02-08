@@ -3,7 +3,7 @@ const Categoria = require('../models/Categoria')
 const router  = express.Router();
 
 /* GET home page */
-router.get('/homepage/cat', (req, res, next) => {
+router.get('/', (req, res, next) => {
   Categoria.find()
     .then(categoria =>{
       console.log(categoria);

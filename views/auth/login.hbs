@@ -1,0 +1,26 @@
+
+    
+<div id="container" class="container ">
+    <div class="row justify-content-center">
+        <div class="col-sm-6 offset-sm-1 text-center">
+            <h5 class="display-5">Bienvenido!</h5>
+            <div class="info-form">
+                <form action="">
+                    <div class="form-group"><label class="">Email</label><input type="email" class="form-control" placeholder="email@example.com"></div>
+                    <div class="form-group"><label class="">Contraseña</label><input type="password" class="form-control" placeholder="Ingresa una contraseña"></div>
+                    <button type="submit" id="btn-signup" class="btn btn-primary">Iniciar sesión</button>
+                </form>
+            </div>
+              <br>
+            <div class="topCushion">Aún no tienes cuenta?<br><a href="/signup" class="btn btn-secondary">Registrate aqui!</a></div>   
+        </div>
+    </div>
+</div>
+
+
+  {{#if errorMessage}}
+    <div class="error-message">
+        {{errorMessage}}
+    </div>
+  {{/if}}
+ 

@@ -8,7 +8,7 @@ const hbs          = require('hbs');
 const mongoose     = require('mongoose');
 const logger       = require('morgan');
 const path         = require('path');
-const Categoria = require('./models/categoria.js');
+
 
 mongoose
   .connect(process.env.MONGODB, {useNewUrlParser: true})
@@ -54,5 +54,8 @@ app.locals.title = 'Express - Generated with IronGenerator';
 const homepage = require('./routes/homepage');
 app.use('/', homepage);
 
+
+const router = require('./routes/auth');
+app.use('/', router);
 
 module.exports = app;
