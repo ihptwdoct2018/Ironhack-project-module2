@@ -6,7 +6,7 @@
 }
 
 .navbar {
-  background: #2B30B3;
+  background:#2B30B3;
   .nav-link {
       color: #fff;
       font-family: 'Montserrat', sans-serif;
@@ -18,7 +18,7 @@
 }
 
 .top-links{background-color: #fff;}
-
+.wraper{ background-color: #b6afaf6b; }
 
 .nav {
   width:100%;
@@ -42,7 +42,7 @@
     color: #fff;
     font-family: 'Montserrat', sans-serif;
 
-    .wraper{
+    .wrapers{
         display: flex;
     }
 
@@ -84,9 +84,6 @@
 }
 
 
-
-
-
 #myCarousel{
 
     .carousel-inner img {
@@ -100,7 +97,7 @@
         color:rgb(255, 255, 255);
         font-family: 'Montserrat Semi-bold', sans-serif;
         font-size: 20px;
-        text-shadow: 2px 2px 2px #2B30B3;
+        text-shadow: 2px 2px 2px#2B30B3;
     }
     .carousel-caption h1{ font-family: 'Montserrat bold', sans-serif; }
 }
