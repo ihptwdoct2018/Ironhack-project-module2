@@ -14,7 +14,7 @@ const anunSchema = new Schema({
   envio: {
     origen: String,
     tiempo: Number,
-    gastos_envio: Number,
+    gastosenvio: Number,
     transporte: String
   },
   calificacion: Number,

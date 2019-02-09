@@ -5,9 +5,9 @@ const userSchema = new Schema({
   email: String,
   usuario: String,
   password: String,
-  tiendas: [ {type: String} ],
-  categorias: [{type: String}],
-  compras: [{type: String}]  
+  tiendas: [{type: Schema.ObjectId, ref: "Tienda"}],
+  categorias: [{type: Schema.ObjectId, ref: "Categoria"}],
+  compras: [{type: Schema.ObjectId, ref: "Compra"}]
 });
 
 const Usuario = mongoose.model('Usuario', userSchema);

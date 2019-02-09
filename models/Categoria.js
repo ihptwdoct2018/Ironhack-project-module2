@@ -5,7 +5,7 @@ const catSchema = new Schema({
   categoria:  String,
   foto:  String,
   identificador: String ,
-  niveles_inf: Number,
+  niveles_inf: Number
 });
 
 const Categoria = mongoose.model('Categoria', catSchema);

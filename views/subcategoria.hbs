@@ -1,11 +1,16 @@
+{{#if subcategoria}}
+  <div class="container text-secondary">
+    <h6>Categorias:</h6>
+  </div>
+{{/if}}
 <section class="container">
 <div class="row justify-content-md-center">
   {{#each subcategoria}}
     <!--<a href="/cat/{{this.identificador}}">{{this.subcategoria}}</a>-->
-    <div class="card col-lg-3 col-md-4 col-sm-12 col-12 text-white bg-dark" style="width: 100%; margin-right: 20px; margin-lefth: 20px; margin-bottom: 20px">
-      <a href="/cat/{{this.identificador}}"><img class="card-img-top" src="{{this.foto}}" alt="Card image cap"></a>
+    <div class="card col-lg-2 col-md-4 col-sm-12 col-12 text-white bg-dark" style="width: 100%; margin-right: 20px; margin-lefth: 20px; margin-bottom: 20px">
+      <a href="/cat/{{this.identificador}}"><img class="card-img-top" style="margin-top:5%"src="{{this.foto}}" alt="Card image cap"></a>
       <div class="card-body">
-        <a href="/cat/{{this.identificador}}" style="text-align: center; text-decoration: none; color: white"><h5 class="card-title">{{this.subcategoria}}</h5></a>
+        <a href="/cat/{{this.identificador}}" style="text-align: center; text-decoration: none; color: white"><h5 class="card-title" style="font-size:15px;">{{this.subcategoria}}</h5></a>
         <!--<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>-->
       </div>
       <!--<ul class="list-group list-group-flush">
@@ -14,6 +19,40 @@
         <li class="list-group-item">Vestibulum at eros</li>
       </ul>
       <div class="card-body">
+        <a href="#" class="card-link">Card link</a>
+        <a href="#" class="card-link">Another link</a>
+      </div>-->
+    </div>
+  {{/each}}
+</div>
+</section>
+{{#if anuncios}}
+    {{#if subcategoria}}
+      <br>
+      <div class="container text-secondary" style="border-top: solid 1px;">
+        <br><h6>Productos:</h6>
+      </div>
+    {{else}}
+      <div class="container text-secondary">
+        <h6>Productos:</h6>
+      </div>
+    {{/if}}
+{{/if}}
+<section class="container">
+<div class="row justify-content-md-center">
+  {{#each anuncios}}
+    <!--<a href="/cat/{{this.identificador}}">{{this.subcategoria}}</a>-->
+    <div class="card col-lg-2 col-md-4 col-sm-12 col-12 text-white bg-dark" style="width: 100%; margin-right: 20px; margin-lefth: 20px; margin-bottom: 20px">
+      <a href="/cat/{{this.identificador}}"><img class="card-img-top" style="margin-top:5%;" src="{{this.fotos.[0]}}" alt="Card image cap"></a>
+      <div class="card-body">
+        <a href="/cat/{{this.identificador}}" style="text-align: center; text-decoration: none; color: white;"><h5 class="card-title" style="font-size:15px;">{{this.titulo}}</h5></a>
+        <p class="card-text" style="font-size:10px;">{{this.descripcion}}</p>
+      </div>
+      <ul class="list-group list-group-flush text-dark" style="margin-bottom: 5%; font-size:10px;">
+        <li class="list-group-item">Tienda: {{this.tienda_id.nombre}}</li>
+        <li class="list-group-item">Precio: ${{this.precio}}</li>
+      </ul>
+      <!--<div class="card-body">
         <a href="#" class="card-link">Card link</a>
         <a href="#" class="card-link">Another link</a>
       </div>-->

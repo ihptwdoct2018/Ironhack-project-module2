@@ -9,7 +9,7 @@ const subcatSchema = new Schema({
   nivel: Number,
   final: Boolean,
   niveles_inferiores: Number,
-  anuncios: [{type: Schema.ObjectId, ref: "Anuncio"}],
+  anuncios: [{type: Schema.ObjectId, ref: "Anuncio"}]
 });
 
 const Subcategoria = mongoose.model('Subcategoria', subcatSchema);

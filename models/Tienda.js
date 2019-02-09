@@ -5,11 +5,15 @@ const tiendaSchema = new Schema({
   pais: String,
   divisa: String,
   nombre: String,
-  anuncios: [{type: String}],
-  foto: String,
-  user_id: {type:String},  
+  anuncios: [{type: Schema.ObjectId, ref: "Anuncio"}],
+  foto: {
+    name: String,
+    path: String,
+    originalName: String
+  },
+  activo: Boolean,
+  user_id: {type: Schema.ObjectId, ref: "Usuario"}
 });
 
-const Tienda = mongoose.model('tienda', tiendaSchema);
+const Tienda = mongoose.model('Tienda', tiendaSchema);
 module.exports = Tienda;
-
