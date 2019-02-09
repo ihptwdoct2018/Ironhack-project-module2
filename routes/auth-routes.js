@@ -78,6 +78,7 @@ authRoutes.post("/login", passport.authenticate("local", {
 
 
 authRoutes.get("/userhome", ensureLogin.ensureLoggedIn(), (req, res) => {
+
   console.log("Estoy logueado")
   res.render("userhome", { user: req.user });
 });
