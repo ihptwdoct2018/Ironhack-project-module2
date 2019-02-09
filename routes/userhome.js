@@ -1,5 +1,7 @@
 const express = require('express');
 const Categoria = require('../models/Categoria')
+const Subcategoria = require('../models/Subcategoria')
+const Anuncios = require('../models/Anuncios')
 const router  = express.Router();
 
 /* GET home page */
