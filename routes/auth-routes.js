@@ -6,6 +6,9 @@ const ensureLogin = require("connect-ensure-login");
 
 // User model
 const User = require("../models/Usuario");
+const Categoria = require('../models/Categoria')
+const Subcategoria = require('../models/Subcategoria')
+const Anuncios = require('../models/Anuncios')
 
 // Bcrypt to encrypt passwords
 const bcrypt = require("bcrypt");
@@ -78,14 +81,26 @@ authRoutes.post("/login", passport.authenticate("local", {
 
 
 authRoutes.get("/userhome", ensureLogin.ensureLoggedIn(), (req, res) => {
-
-  console.log("Estoy logueado")
-  res.render("userhome", { user: req.user });
+  Categoria.find()
+    .then(categoria =>{
+      console.log(req.user)
+      res.render("userhome", {user: req.user, categoria });
+    })
+    .catch(err =>{
+      console.log(err)
+    })
 });
 
 
 authRoutes.get("/login/sesion", ensureLogin.ensureLoggedIn(), (req, res) => {
-  res.render("userhome", { user: req.user });
+  Categoria.find()
+    .then(categoria =>{
+      console.log("Estoy logueado")
+      res.render("userhome", {user: req.user, categoria });
+    })
+    .catch(err =>{
+      console.log(err)
+    })
 });
 
 authRoutes.get("/logout", (req, res) => {
@@ -96,3 +111,4 @@ authRoutes.get("/logout", (req, res) => {
 });
 
 module.exports = authRoutes;
+

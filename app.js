@@ -107,13 +107,8 @@ app.locals.title = 'Express - Generated with IronGenerator';
 const navegar = require('./routes/navegar');
 app.use('/', navegar);
 
-const userhome = require('./routes/navegar');
-app.use('/', userhome);
-
-
 const authRoutes = require("./routes/auth-routes");
 app.use('/', authRoutes);
-
 
 const siteRoutes = require('./routes/siteRoutes')
 app.use('/', siteRoutes);

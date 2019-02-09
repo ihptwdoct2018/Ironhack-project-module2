@@ -3,18 +3,19 @@
       <h1>Usuario</h1>
       <p>Personalizado, hecho a mano y unico...</p>
 
-<div class="container"> 
-      <div class="card-deck justify-content-center">
-   
-        <div class="" style="width:200px">
-                <img class="card-img-top" src="https://i.etsystatic.com/11703537/c/1019/814/0/17/il/9307c3/1064959154/il_340x270.1064959154_qaxy.jpg" alt="Card image" style="width:100%">
-              <div class="card-body text-center">
-                <h4 class="card-title">Ropa y Calzado</h4>
-                <p class="card-text">Descripcion de la categoria, podemos describir algunos productos aqui</p>
-                <a href="#" class="btn btn-primary">Visitar categoria...</a>
-              </div>
-              
-          </div>  
-             
+
+      <section class="container">
+      <div class="row justify-content-md-center">
+        {{#each categoria}}
+          <!--<a href="/cat/{{this.identificador}}">{{this.subcategoria}}</a>-->
+          <div class="card col-lg-2 col-md-4 col-sm-12 col-12 text-white bg-dark" style="width: 100%; margin-right: 20px; margin-lefth: 20px; margin-bottom: 20px">
+            <a href="/cat/{{this.identificador}}"><img class="card-img-top" style="margin-top:5%"src="{{this.foto}}" alt="Card image cap"></a>
+            <div class="card-body">
+              <a href="/cat/{{this.identificador}}" style="text-align: center; text-decoration: none; color: white"><h5 class="card-title" style="font-size:15px;">{{this.categoria}}</h5></a>
+              <!--<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>-->
+          </div>
+            </div>
+        {{/each}}
       </div>
+      </section>
 </div>
