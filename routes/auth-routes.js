@@ -66,7 +66,6 @@ authRoutes.post("/signup", (req, res, next) => {
 
 // login route
 authRoutes.get("/login", (req, res, next) => {
-  console.log("Estoy entrando por aqui al login despues de logueado")
   res.render("auth/login", { "message": req.flash("error") });
 });
 
