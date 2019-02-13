@@ -100,6 +100,4 @@ router.post("/administrartienda/altaproductos/add", upload.single("photo"), (req
     res.redirect(`/altaproductos/${idtienda}`)});
 })
 
-
-
 module.exports = router;

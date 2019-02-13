@@ -6,7 +6,7 @@
       <div class="info-form">
         <form class="md-form" action="/administrartienda/altatienda/add" method="post"  enctype="multipart/form-data">
           <div class="form-group">
-            <select class="form-control" name="divisa" placeholder="Selecciona pais">
+            <select class="form-control" name="divisa" placeholder="Selecciona pais" required="required">
               <option value="Mexico">Mexico</option>
               <option value="Estados Unidos">Estados Unidos</option>
               <option value="Europa">Europa</option>
@@ -14,7 +14,7 @@
           </div>
           <div class="form-group">
             <label for="divisa">Divisa:</label>
-            <select class="form-control" name="divisa" placeholder="Selecciona divisa">
+            <select class="form-control" name="divisa" placeholder="Selecciona divisa" required="required">
               <option value="Peso Mexicanos">Peso Mexicanos</option>
               <option value="Dolar Estadounidense">Dolar Estadounidense</option>
               <option value="Euro">Euro</option>
@@ -22,11 +22,11 @@
           </div>
           <div class="form-group">
             <label for="nombre">Nombre Tienda:</label>
-            <input class="form-control" type="text" name="nombre" value="" placeholder="Ingresa nombre de la tienda">
+            <input class="form-control" type="text" name="nombre" value="" placeholder="Ingresa nombre de la tienda" required="required">
           </div>
           <div class="form-group">
             <label for="imagen">Agrega una imagen:</label>
-            <input class="form-control btn" type="file" name="photo" value="">
+            <input class="form-control btn" type="file" name="photo" value="" required="required">
           </div>
           <button class="btn btn-primary" type="submit" name="" value="">Guardar</button>
         </form>
