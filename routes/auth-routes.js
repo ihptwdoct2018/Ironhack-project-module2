@@ -246,4 +246,32 @@ authRoutes.get('/altaproductos/cat/:idcat/:idsubcat/:idsubcat2/:idsubcat3/:idtie
     })
 });
 
+
+//Rutas Perfil
+/*GET perfil*/
+
+
+authRoutes.get('/perfil', ensureLogin.ensureLoggedIn(),(req, res, next) =>{
+  console.log(req.user)
+  res.render('perfil', { perfil: req.user })
+});
+
+
+//Rutas Carrito
+/*GET Carrito*/
+
+
+authRoutes.get("/carrito/:idAnuncio/:stock/:precio", ensureLogin.ensureLoggedIn(), (req, res) => {
+  let item = {
+    idAnuncio: req.params.idAnuncio, 
+    stcok: req.params.stock,
+    precio: req.params.precio, 
+    user: req.user._id
+  }
+      res.render('carrito', {item});
+  
+});
+
+
+
 module.exports = authRoutes;

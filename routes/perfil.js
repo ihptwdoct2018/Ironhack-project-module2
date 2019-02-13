@@ -11,16 +11,5 @@ router.get('/', (req, res, next) => {
   res.render('homepage')
 });
 
-router.get('/perfil/:userId', (req, res, next) =>{
-  User.findById(req.params.userId)
-  .then(perfil => {
-    res.render('perfil', { User: perfil })
-  })
-  .catch(error => {
-    console.log(error)
-  })
-});
-
-
 module.exports = router;
 
