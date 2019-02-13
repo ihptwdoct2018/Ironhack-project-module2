@@ -8,7 +8,6 @@ const router  = express.Router();
 router.get('/', (req, res, next) => {
   Categoria.find()
     .then(categoria =>{
-      console.log(categoria);
       res.render('homepage', {categoria})
     })
     .catch(err =>{

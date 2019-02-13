@@ -18,7 +18,6 @@ router.get('/cat/:idpadre', (req, res, next) => {
       Anuncios.find({$or: [ {'categoria': idpadre},{'subcategoria_padre': idpadre},{'subcategoria': idpadre} ]})
         .populate("tienda_id")
         .then(anuncios =>{
-          console.log(anuncios)
           res.render('subcategoria', {subcategoria, anuncios})
         })
         .catch(err =>{

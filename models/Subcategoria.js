@@ -8,7 +8,7 @@ const subcatSchema = new Schema({
   identificador_padre: String,
   nivel: Number,
   final: Boolean,
-  niveles_inferiores: Number,
+  niveles_inf: Number,
   anuncios: [{type: Schema.ObjectId, ref: "Anuncio"}]
 });
 

@@ -113,6 +113,9 @@ app.use('/', authRoutes);
 const siteRoutes = require('./routes/siteRoutes')
 app.use('/', siteRoutes);
 
+const storeProds = require('./routes/storeprods')
+app.use('/', storeProds);
+
 
 
 module.exports = app;

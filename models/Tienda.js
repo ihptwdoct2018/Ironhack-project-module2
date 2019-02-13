@@ -11,7 +11,7 @@ const tiendaSchema = new Schema({
     path: String,
     originalName: String
   },
-  activo: Boolean,
+  activo: {type: Boolean, default: true },
   user_id: {type: Schema.ObjectId, ref: "Usuario"}
 });
 
