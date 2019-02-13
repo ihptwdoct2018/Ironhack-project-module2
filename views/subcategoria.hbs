@@ -52,10 +52,9 @@
         <li class="list-group-item">Tienda: {{this.tienda_id.nombre}}</li>
         <li class="list-group-item">Precio: ${{this.precio}}</li>
       </ul>
-      <!--<div class="card-body">
-        <a href="#" class="card-link">Card link</a>
-        <a href="#" class="card-link">Another link</a>
-      </div>-->
+      <div class="card-body">
+        <a href="/carrito/{{this._id}}/{{this.stock}}/{{this.precio}}" class="card-link" style="font-size: 10px;">Agregar a carrito</a>
+      </div>
     </div>
   {{/each}}
 </div>

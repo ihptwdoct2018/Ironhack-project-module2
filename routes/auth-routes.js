@@ -124,7 +124,14 @@ authRoutes.get('/altatienda', ensureLogin.ensureLoggedIn(), (req, res, next) => 
 
 authRoutes.get('/detalletienda/:idtienda', ensureLogin.ensureLoggedIn(), (req, res, next) => {
   let idtienda = req.params.idtienda;
-  res.render('detalletienda',{idtienda})
+  Anuncios.find({'tienda_id': idtienda})
+    .populate("tienda_id")
+    .then(anuncios =>{
+      res.render('detalletienda',{idtienda,anuncios})
+    })
+    .catch(err =>{
+      console.log(err)
+    })
 });
 
 
