@@ -12,17 +12,17 @@
 </head>
 <body>
 
-<div class="fixed-top">
+
 <!-- Main Navbar  -->
-<div class="">
-<nav class="navbar  navbar-expand-sm">
+
+<nav class="navbar top-nav navbar-nav  navbar-expand-sm">
         <a class="navbar-brand" href="/login/sesion"><img src="/images/logo.png" class="logo"></a>
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#one">
              <span class="navbar-toggler-icon"><i class="fas fa-bars"></i></span>
         </button>
 
-        <form action="" class="search-bar">
+        <form action="" class="search-bar mb-2 mr-sm-2">
              <input class="form-control mr-sm-2" type="search" placeholder="Busca un producto">
              <button class="btn btn-primary" type="submit">Buscar</button>
         </form>
@@ -34,12 +34,13 @@
                  <li class="nav-item"><a class="nav-link" href="/login/sesion"><i class="fas fa-user"></i></a></li>
                  <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-shopping-cart"></i></a></li>
                  <li class="nav-item"><a class="nav-link" href="/administrartienda"><i class="fas fa-store"></i></a></li>
+                 <li class="nav-item"><a class="nav-link" href="/logout"><i class="fas fa-sign-out-alt"></i></a></li>
+
             </ul>
         </div>
 </nav>
-</div>
 <!-- Category Navbar -->
-<header>
+<nav>
         <div class="container border border-top-0 border-left-0 border-right-0">
             <div class="row top-links">
               <ul class="nav justify-content-center">
@@ -53,18 +54,12 @@
 
             </div>
         </div>
-</header>
-</div>
+</nav>
 
-<br><br><br><br><br><br><br><br>
 
   {{{ body }}}
 
-<a href="/userhome">Home user</a>
 
-        <a href="/logout" class="btn btn-secondary disable btn-sm">
-          <span class=""><i class="fas fa-sign-out-alt"></i></span> Log out
-        </a>
 
 <!-- Footer -->
   <footer id="myFooter" class="fixed-bottom">

@@ -103,6 +103,8 @@ app.use(favicon(path.join(__dirname, 'public', 'images', 'logo.ico')));
 app.locals.title = 'Express - Generated with IronGenerator';
 
 
+const perfil = require('./routes/perfil')
+app.use('/', perfil);
 
 const navegar = require('./routes/navegar');
 app.use('/', navegar);
@@ -115,6 +117,7 @@ app.use('/', siteRoutes);
 
 const storeProds = require('./routes/storeprods')
 app.use('/', storeProds);
+
 
 
 
