@@ -1,52 +1,67 @@
  
+<!-- Avatar img  -->
+
+      <div class="col-md-3 float-right">
+          <div class="card-img-right">
+              <img src="/images/avatar.svg" class="img-fluid avatar" alt="">
+          </div>
+      </div>
   
-  <div class="container">
-  	<div class="row">
-  		<div class="col-md-3 ">
+  <!-- left nav bar  -->
+  <div class="container contenedor">
+  	<div class="row shadow-lg cta-card">
+  		<div class="col-sm-3 contenedor">
   		     <div class="list-group ">
                 <a href="#" class="list-group-item list-group-item-action active">Perfil</a>
                 <a href="#" class="list-group-item list-group-item-action">Compras</a>
                 <a href="#" class="list-group-item list-group-item-action">Carrito</a>
                 <a href="/administrartienda" class="list-group-item list-group-item-action">Tienda</a>
-
               </div>
-  		</div>
-  		<div class="col-md-9">
-  		    <div class="card">
-  		        <div class="card-body">
+              </div>
+                <div class="col-md-9">
+                  <div class="card contenedor">
+                    <div class="card-body">
+                      <div class="row col-12">
+                        <div class="justify-content-start">
+                            <h4>{{perfil.username}}</h4>         
+                        </div>          
+                      </div>
+                
+                        <hr>
+
+<!-- Card body  -->
   		            <div class="row">
-  		                <div class="col-md-12">
-  		                    <h4>{{perfil.username}}</h4>
-  		                    <hr>
-  		                </div>
-  		            </div>
-  		            <div class="row">
-  		                <div class="col-md-12">
+  		                <div class="col-sm-12">
   		                    <form>
                                 <div class="form-group row">
-                                  <label for="username" class="col-4 col-form-label"> <h1>{{usuario.username}}</h1></label>
+                                  <label for="username" class="col-4 col-form-label"> <h1></h1></label>
                                 </div>
+
                                 <div class="form-group row">
-                                  <label for="name" class="col-4 col-form-label">First Name</label>
+                                  <label for="name" class="col-4 col-form-label">suario OSS</label>
                                   <div class="col-8">
-                                    <input id="name" name="name" placeholder="First Name" class="form-control here" type="text">
+                                    <label id="name" name="name" placeholder="First Name" class="form-control here" type="text"><h5>{{perfil.username}}</h5></label>
                                   </div>
                                 </div>
+
+
                                 <div class="form-group row">
-                                  <label for="lastname" class="col-4 col-form-label">Last Name</label>
+                                  <label for="lastname" class="col-4 col-form-label">Correo eléctronico</label>
                                   <div class="col-8">
-                                    <input id="lastname" name="lastname" placeholder="Last Name" class="form-control here" type="text">
+                                    <label id="name" name="name" placeholder="First Name" class="form-control here" type="text"><h5>{{perfil.email}}</h5></label>
                                   </div>
                                 </div>
+
+
                                 <div class="form-group row">
-                                  <label for="text" class="col-4 col-form-label"></label>
+                                  <label for="text" class="col-4 col-form-label">Tiendas</label>
                                   <div class="col-8">
-                                    <label id="text" name="text" class="form-control here" type="text">
+                                    <label id="name" name="name" placeholder="First Name" class="form-control here" type="text"><h5>{{tiendas.nombre}}</h5></label>
                                   </div>
                                 </div>
                               
                               
-                              </form>
+                          </form>
   		                </div>
   		            </div>
 
@@ -55,3 +70,5 @@
   		</div>
   	</div>
   </div>
+
+

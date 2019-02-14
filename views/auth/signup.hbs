@@ -1,20 +1,59 @@
 
+<div class="contenedor">
+    <div class="row justify-content-end col-12">
+        <h6>Ya tienes cuenta?</h6>   
+    </div>   
 
-    
-<div id="container" class="container ">
-    <div class="row justify-content-center">
-        <div class="col-sm-6 offset-sm-1 text-center">
-            <h5 class="display-6">Registro de Usuario</h5>
-            <div class="info-form">
-                <form action="/signup" id="form" method="POST">
-                    <label for="username">Nombre</label><input name="username" type="text" class="form-control" placeholder="Ingresa un nombre">
-                    <label for="email">Email</label><input name="email" type="email" class="form-control" placeholder="email@example.com">
-                    <label for="password">Contraseña</label><input name="password" type="password" class="form-control" placeholder="Ingresa una contraseña">
-                    <button type="submit" id="btn-signup" class="btn btn-primary">Registrarse!</button>
-                </form>
-            </div>
-              <br>
-            <div>Ya tienes cuenta?<br><a href="/login" class="btn btn-secondary">Inicia sesión</a></div>   
-        </div>
+    <div class="row justify-content-end col-12"> 
+        <a href="/login" class="">Inicia sesión</a>
     </div>
 </div>
+
+
+<div class="contenedor container">
+
+    <div class="justify-content-center bgd">
+
+            <div class="row justify-content-center">
+                <h5 class="contenedor text-center txt">Registro de Usuario</h5>
+            </div>
+
+
+            <div id="container" class="container col-6">
+                <div class="row justify-content-center">
+                    <div class="col-sm-12 offset-sm-1 text-center">
+                        
+                        <div class="info-form">
+                            <form action="/signup" id="form" method="POST">
+                                
+                                <div class="row contenedor">
+                                    <label for="username">Nombre</label><input name="username" type="text" class="form-control" placeholder="Ingresa un nombre">
+                                </div>
+
+                                <div class="row contenedor">
+                                    <label for="email">Email</label><input name="email" type="email" class="form-control" placeholder="email@example.com">
+                                </div>
+
+                                <div class="row contenedor">
+                                    <label for="password">Contraseña</label><input name="password" type="password" class="form-control" placeholder="Ingresa una contraseña">
+                                </div>
+ 
+                            <div class="row justify-content-center contenedor">
+                                <button type="submit" id="btn-signup" class="btn btn-info signup">Registrarse!</button>
+                            </div>
+
+                            </form>
+                        </div>
+                            
+                    </div>
+                </div>
+            </div>
+    </div>   
+</div>
+
+
+
+
+
+
+

@@ -1,4 +1,6 @@
-
+body{
+    font-family: 'Montserrat', sans-serif;
+}
 
 .logo{
   width: 125px;
@@ -86,7 +88,7 @@
 
 
 #myCarousel{
-    
+ 
     .carousel-inner img {
         width: 100%; /* Set width to 100% */
         min-height:200px;
@@ -103,7 +105,30 @@
     .carousel-caption h1{ font-family: 'Montserrat bold', sans-serif; }
 }
 
+.contenedor{
+    margin-top: 20px;
+}
 
 
+.bgd{
+    background-color: #b6afaf3f;
+}
+
+.signup{
+     margin: 25px;       
+}
 
 
+.hpg-img{
+        width: 400px;
+}
+
+
+.avatar{
+    width: 150px;
+    margin-top: 25px;
+}
+
+.cta-card{
+    height: 500px;
+}
