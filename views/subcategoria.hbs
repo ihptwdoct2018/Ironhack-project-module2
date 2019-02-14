@@ -4,27 +4,27 @@
   </div>
 {{/if}}
 <section class="container">
-<div class="row justify-content-md-center">
-  {{#each subcategoria}}
-    <!--<a href="/cat/{{this.identificador}}">{{this.subcategoria}}</a>-->
-    <div class="card col-lg-2 col-md-4 col-sm-12 col-12 text-white bg-dark" style="width: 100%; margin-right: 20px; margin-lefth: 20px; margin-bottom: 20px">
-      <a href="/cat/{{this.identificador}}"><img class="card-img-top" style="margin-top:5%"src="{{this.foto}}" alt="Card image cap"></a>
-      <div class="card-body">
-        <a href="/cat/{{this.identificador}}" style="text-align: center; text-decoration: none; color: white"><h5 class="card-title" style="font-size:15px;">{{this.subcategoria}}</h5></a>
-        <!--<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>-->
+  <div class="row justify-content-md-center">
+    {{#each subcategoria}}
+      <!--<a href="/cat/{{this.identificador}}">{{this.subcategoria}}</a>-->
+      <div class="card col-lg-2 col-md-4 col-sm-12 col-12 text-white bg-dark" style="width: 100%; margin-right: 20px; margin-lefth: 20px; margin-bottom: 20px">
+        <a href="/cat/{{this.identificador}}"><img class="card-img-top" style="margin-top:5%"src="{{this.foto}}" alt="Card image cap"></a>
+        <div class="card-body">
+          <a href="/cat/{{this.identificador}}" style="text-align: center; text-decoration: none; color: white"><h5 class="card-title" style="font-size:15px;">{{this.subcategoria}}</h5></a>
+          <!--<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>-->
+        </div>
+        <!--<ul class="list-group list-group-flush">
+          <li class="list-group-item">Cras justo odio</li>
+          <li class="list-group-item">Dapibus ac facilisis in</li>
+          <li class="list-group-item">Vestibulum at eros</li>
+        </ul>
+        <div class="card-body">
+          <a href="#" class="card-link">Card link</a>
+          <a href="#" class="card-link">Another link</a>
+        </div>-->
       </div>
-      <!--<ul class="list-group list-group-flush">
-        <li class="list-group-item">Cras justo odio</li>
-        <li class="list-group-item">Dapibus ac facilisis in</li>
-        <li class="list-group-item">Vestibulum at eros</li>
-      </ul>
-      <div class="card-body">
-        <a href="#" class="card-link">Card link</a>
-        <a href="#" class="card-link">Another link</a>
-      </div>-->
-    </div>
-  {{/each}}
-</div>
+    {{/each}}
+  </div>
 </section>
 {{#if anuncios}}
     {{#if subcategoria}}
@@ -38,29 +38,51 @@
       </div>
     {{/if}}
 {{/if}}
-<section class="container">
-<div class="row justify-content-md-center">
-  {{#each anuncios}}
-    <!--<a href="/cat/{{this.identificador}}">{{this.subcategoria}}</a>-->
-    <div class="card col-lg-2 col-md-4 col-sm-12 col-12 text-white bg-dark" style="width: 100%; margin-right: 20px; margin-lefth: 20px; margin-bottom: 20px">
-      <a href="/cat/{{this.identificador}}"><img class="card-img-top" style="margin-top:5%;" src="{{this.foto.path}}" alt="Card image cap"></a>
-      <div class="card-body">
-        <a href="/cat/{{this.identificador}}" style="text-align: center; text-decoration: none; color: white;"><h5 class="card-title" style="font-size:15px;">{{this.titulo}}</h5></a>
-        <p class="card-text" style="font-size:10px;">{{this.descripcion}}</p>
-      </div>
-      <ul class="list-group list-group-flush text-dark" style="margin-bottom: 5%; font-size:10px;">
-        <li class="list-group-item">Tienda: {{this.tienda_id.nombre}}</li>
-        <li class="list-group-item">Precio: ${{this.precio}}</li>
-      </ul>
-      <div class="card-body">
-        <a href="/carrito/{{this._id}}/{{this.stock}}/{{this.precio}}" class="card-link" style="font-size: 10px;">Agregar a carrito</a>
-      </div>
+
+{{#if usuario}}
+  <section class="container">
+    <div class="row justify-content-md-center">
+      {{#each anuncios}}
+        <!--<a href="/cat/{{this.identificador}}">{{this.subcategoria}}</a>-->
+        <div class="card col-lg-2 col-md-4 col-sm-12 col-12 text-white bg-dark" style="width: 100%; margin-right: 20px; margin-lefth: 20px; margin-bottom: 20px">
+          <a href="#"><img class="card-img-top" style="margin-top:5%;" src="{{this.foto.path}}" alt="Card image cap"></a>
+          <div class="card-body">
+            <a href="#" style="text-align: center; text-decoration: none; color: white;"><h5 class="card-title" style="font-size:15px;">{{this.titulo}}</h5></a>
+            <p class="card-text" style="font-size:10px;">{{this.descripcion}}</p>
+          </div>
+          <ul class="list-group list-group-flush text-dark" style="margin-bottom: 5%; font-size:10px;">
+            <li class="list-group-item">Tienda: {{this.tienda_id.nombre}}</li>
+            <li class="list-group-item">Precio: ${{this.precio}}</li>
+          </ul>
+          <div class="card-body">
+            <a href="/carrito/add/{{this._id}}/{{this.precio}}/{{this.idpadrecarrito}}" class="btn btn-primary" style="font-size: 10px;">Agregar a carrito</a>
+          </div>
+        </div>
+      {{/each}}
     </div>
-  {{/each}}
-</div>
-<br><br><br>
-</section>
-
-
-  </div>
-</div>
+    <br><br><br>
+  </section>
+{{else}}
+  <section class="container">
+    <div class="row justify-content-md-center">
+      {{#each anuncios}}
+        <!--<a href="/cat/{{this.identificador}}">{{this.subcategoria}}</a>-->
+        <div class="card col-lg-2 col-md-4 col-sm-12 col-12 text-white bg-dark" style="width: 100%; margin-right: 20px; margin-lefth: 20px; margin-bottom: 20px">
+          <a href="#"><img class="card-img-top" style="margin-top:5%;" src="{{this.foto.path}}" alt="Card image cap"></a>
+          <div class="card-body">
+            <a href="#" style="text-align: center; text-decoration: none; color: white;"><h5 class="card-title" style="font-size:15px;">{{this.titulo}}</h5></a>
+            <p class="card-text" style="font-size:10px;">{{this.descripcion}}</p>
+          </div>
+          <ul class="list-group list-group-flush text-dark" style="margin-bottom: 5%; font-size:10px;">
+            <li class="list-group-item">Tienda: {{this.tienda_id.nombre}}</li>
+            <li class="list-group-item">Precio: ${{this.precio}}</li>
+          </ul>
+          <div class="card-body">
+            <a href="/login" class="btn btn-primary" style="font-size: 10px;">Agregar a carrito</a>
+          </div>
+        </div>
+      {{/each}}
+    </div>
+    <br><br><br>
+  </section>
+{{/if}}

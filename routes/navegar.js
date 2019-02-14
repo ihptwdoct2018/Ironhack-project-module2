@@ -13,12 +13,14 @@ router.get('/', (req, res, next) => {
 
 router.get('/cat/:idpadre', (req, res, next) => {
   let idpadre = req.params.idpadre;
+  let usuario = req.user;
   Subcategoria.find({'identificador_padre': idpadre})
     .then(subcategoria =>{
       Anuncios.find({$or: [ {'categoria': idpadre},{'subcategoria_padre': idpadre},{'subcategoria': idpadre} ]})
         .populate("tienda_id")
         .then(anuncios =>{
-          res.render('subcategoria', {subcategoria, anuncios})
+          anuncios.forEach(anuncio=>anuncio.idpadrecarrito=idpadre)
+          res.render('subcategoria', {subcategoria, anuncios, usuario})
         })
         .catch(err =>{
           console.log(err)

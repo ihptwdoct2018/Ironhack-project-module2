@@ -12,6 +12,7 @@ const Categoria = require('../models/Categoria')
 const Subcategoria = require('../models/Subcategoria')
 const Anuncios = require('../models/Anuncios')
 const Tienda = require('../models/Tienda')
+const Carrito = require('../models/Carrito')
 
 // Bcrypt to encrypt passwords
 const bcrypt = require("bcrypt");
@@ -174,7 +175,6 @@ authRoutes.get('/altaproductos/cat/:idcat/:idsubcat/:idtienda', ensureLogin.ensu
   niveles.subcategoria_padre=idcat;
   niveles.subcategoria=idsubcat;
   niveles.idtienda=idtienda;
-  console.log(niveles);
   Subcategoria.find({'identificador_padre': idsubcat})
     .then(subcategoria1 =>{
       subcategoria1.forEach((subcat1)=>{
@@ -259,26 +259,86 @@ authRoutes.get('/altaproductos/cat/:idcat/:idsubcat/:idsubcat2/:idsubcat3/:idtie
 
 
 authRoutes.get('/perfil', ensureLogin.ensureLoggedIn(),(req, res, next) =>{
-  console.log(req.user)
   res.render('perfil', { perfil: req.user })
 });
 
 
 //Rutas Carrito
 /*GET Carrito*/
+authRoutes.get("/carrito/add/:idanuncio/:precio/:idpadre", ensureLogin.ensureLoggedIn(), (req, res) => {
+  let idpadre = req.params.idpadre;
+  let usuario = req.user;
+  let idanuncio = req.params.idanuncio;
+  let precio = req.params.precio;
 
+  const newCarrito =  new Carrito({
+    user_id: req.user._id,
+    orden: {
+      anuncio_id : idanuncio,
+      cantidad   : 1,
+      subtotal   : precio
+    }
+  });
 
-authRoutes.get("/carrito/:idAnuncio/:stock/:precio", ensureLogin.ensureLoggedIn(), (req, res) => {
-  let item = {
-    idAnuncio: req.params.idAnuncio, 
-    stcok: req.params.stock,
-    precio: req.params.precio, 
-    user: req.user._id
-  }
-      res.render('carrito', {item});
-  
+  newCarrito.save()
+  .then(carrito=>{
+    Subcategoria.find({'identificador_padre': idpadre})
+    .then(subcategoria =>{
+      Anuncios.find({$or: [ {'categoria': idpadre},{'subcategoria_padre': idpadre},{'subcategoria': idpadre} ]})
+        .populate("tienda_id")
+        .then(anuncios =>{
+          anuncios.forEach(anuncio=>anuncio.idpadrecarrito=idpadre)
+          res.render('subcategoria', {subcategoria, anuncios, usuario})
+        })
+        .catch(err =>{
+          console.log(err)
+        })
+    })
+    .catch(err =>{
+      console.log(err)
+    })
+  })
 });
 
+authRoutes.get('/carrito', ensureLogin.ensureLoggedIn(),(req, res, next) =>{
+  let idusuario = req.user._id;
+  let costototal=0;
+  Carrito.find({'user_id': idusuario})
+    .populate("orden.anuncio_id")
+    .then(carrito =>{
+      carrito.forEach(carro=>{
+        costototal=costototal+carro.orden.subtotal
+      })
+      carrito.costototal=costototal
+      res.render('detallecarrito',{carrito})
+    })
+    .catch(err =>{
+      console.log(err)
+    })
+});
 
+authRoutes.get('/carrito/delete/:idorden', ensureLogin.ensureLoggedIn(),(req, res, next) =>{
+  let idorden = req.params.idorden;
+  let idusuario = req.user._id;
+  let costototal=0;
+  Carrito.remove({'_id': idorden})
+  .then(carrito =>{
+    Carrito.find({'user_id': idusuario})
+      .populate("orden.anuncio_id")
+      .then(carrito =>{
+        carrito.forEach(carro=>{
+          costototal=costototal+carro.orden.subtotal
+        })
+        carrito.costototal=costototal
+        res.render('detallecarrito',{carrito})
+      })
+      .catch(err =>{
+        console.log(err)
+      })
+    })
+    .catch(err =>{
+      console.log(err)
+    })
+});
 
 module.exports = authRoutes;

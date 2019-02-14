@@ -1,12 +1,13 @@
 <div id="container" class="container ">
-  <div class="row justify-content-center">
-    <div class="col-sm-6 offset-sm-1 text-center">
-      <h5 class="display-5">Captura los datos de tu tienda!</h5>
+  <div class="row">
+    <div class="col-sm-6 offset-sm-1">
+      <h5 class="display-5 text-center">Captura los datos de tu tienda!</h5>
       <br>
       <div class="info-form">
         <form class="md-form" action="/administrartienda/altatienda/add" method="post"  enctype="multipart/form-data">
           <div class="form-group">
-            <select class="form-control" name="divisa" placeholder="Selecciona pais" required="required">
+            <label for="pais">Pais origen:</label>
+            <select class="form-control" name="pais" placeholder="Selecciona pais" required="required">
               <option value="Mexico">Mexico</option>
               <option value="Estados Unidos">Estados Unidos</option>
               <option value="Europa">Europa</option>
