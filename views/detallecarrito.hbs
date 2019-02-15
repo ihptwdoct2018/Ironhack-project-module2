@@ -26,10 +26,17 @@
   		                <div class="col">
 
 
-                            <div class="prod">
-                            <h5>Costo total: ${{carrito.costototal}}</h5>
-                            <button class="btn btn-success contenedor" type="submit" name="" value="">Pagar ahora</button>
-                            </div>
+                             {{#if carrito}}
+    <br>
+      <h5>Costo total: ${{carrito.costototal}}</h5>
+    <br>
+    <form class="md-form" action="/comprar/{{carrito.[0].user_id}}/{{carrito.costototal}}" method="post">
+      <div class="form-group">
+        <button class="btn btn-primary" type="submit" name="" value="">Genera compra</button>
+      </div>
+    </form>
+    <br>
+  {{/if}}
 
                             <section class="container">
                               
