@@ -1,9 +1,18 @@
 <section class="container">
   <br>
   <h6>Articulos dentro de la orden</h6>
-  <br>
-  <h5>Costo total: ${{carrito.costototal}}</h5>
-  <br>
+  {{#if carrito}}
+    <br>
+      <h5>Costo total: ${{carrito.costototal}}</h5>
+    <br>
+    <form class="md-form" action="/comprar/{{carrito.[0].user_id}}/{{carrito.costototal}}" method="post">
+      <div class="form-group">
+        <button class="btn btn-primary" type="submit" name="" value="">Genera compra</button>
+      </div>
+    </form>
+    <br>
+  {{/if}}
+
   <div class="row justify-content-md-center">
     {{#each carrito}}
       <!--<a href="/cat/{{this.identificador}}">{{this.subcategoria}}</a>-->
@@ -21,7 +30,6 @@
           <a href="/carrito/delete/{{this._id}}" class="btn btn-primary" style="font-size: 10px;">Eliminar</a>
         </div>
       </div>
-      <hr><br>
     {{/each}}
   </div>
   <br><br><br>

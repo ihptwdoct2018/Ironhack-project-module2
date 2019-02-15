@@ -16,7 +16,7 @@ router.get('/cat/:idpadre', (req, res, next) => {
   let usuario = req.user;
   Subcategoria.find({'identificador_padre': idpadre})
     .then(subcategoria =>{
-      Anuncios.find({$or: [ {'categoria': idpadre},{'subcategoria_padre': idpadre},{'subcategoria': idpadre} ]})
+      Anuncios.find({$and:[ {$or: [ {'categoria': idpadre},{'subcategoria_padre': idpadre},{'subcategoria': idpadre} ]}, {stock: {$gt: 0}} ]})
         .populate("tienda_id")
         .then(anuncios =>{
           anuncios.forEach(anuncio=>anuncio.idpadrecarrito=idpadre)

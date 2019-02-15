@@ -2,9 +2,9 @@ const mongoose = require('mongoose');
 const Schema   = mongoose.Schema;
 
 const compraSchema = new Schema({
+  user_id: {type: Schema.ObjectId, ref: "Usuario"},
   compra:[{
-    user_id: {type: Schema.ObjectId, ref: "Usuario"},
-    anuncio: {type: Schema.ObjectId, ref: "Anuncio"},
+    anuncio: {type: Schema.ObjectId, ref: "Anuncios"},
     cantidad: Number,
     subtotal: Number
   }],
