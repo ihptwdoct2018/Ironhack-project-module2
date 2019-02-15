@@ -83,6 +83,9 @@ body {
 .contenedor {
   margin-top: 20px; }
 
+.cbgd {
+  color: #042251; }
+
 .bgd {
   background-color: #b6afaf3f; }
 
@@ -93,10 +96,21 @@ body {
   width: 400px; }
 
 .avatar {
-  width: 150px;
-  margin-top: 25px; }
+  width: 125px;
+  display: inline-block; }
 
 .cta-card {
-  height: 500px; }
+  padding-bottom: 30px; }
+
+.row {
+  display: flex;
+  flex-wrap: wrap; }
+
+.prod {
+  margin: 1%; }
+
+@media screen and (max-width: 700px) {
+  .row, .navbar {
+    flex-direction: column; } }
 
 /*# sourceMappingURL=style.css.map */

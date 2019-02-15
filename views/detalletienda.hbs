@@ -1,29 +1,84 @@
-<div class="container">
-  <a href="/altaproductos/{{this.idtienda}}">Agregar producto.</a>
-  <br><br>
-  <h6>Productos:</h6>
-  <br>
-  <section>
-    <div class="row justify-content-md-center">
-      {{#each anuncios}}
-        <!--<a href="/cat/{{this.identificador}}">{{this.subcategoria}}</a>-->
-        <div class="card col-lg-2 col-md-4 col-sm-12 col-12 text-white bg-dark" style="width: 100%; margin-right: 20px; margin-lefth: 20px; margin-bottom: 20px">
-          <a href="#"><img class="card-img-top" style="margin-top:5%;" src="{{this.foto.path}}" alt="Card image cap"></a>
-          <div class="card-body">
-            <a href="#" style="text-align: center; text-decoration: none; color: white;"><h5 class="card-title" style="font-size:15px;">{{this.titulo}}</h5></a>
-            <p class="card-text" style="font-size:10px;">{{this.descripcion}}</p>
-          </div>
-          <ul class="list-group list-group-flush text-dark" style="margin-bottom: 5%; font-size:10px;">
-            <li class="list-group-item">Tienda: {{this.tienda_id.nombre}}</li>
-            <li class="list-group-item">Precio: ${{this.precio}}</li>
-          </ul>
-          <!--<div class="card-body">
-            <a href="#" class="card-link">Card link</a>
-            <a href="#" class="card-link">Another link</a>
-          </div>-->
+
+
+
+<div class="container contenedor">
+  	<div class="row shadow-lg cta-card">
+
+        <div class="col-md-3 contenedor">
+            <div class="list-group ">
+                <a href="/perfil" class="list-group-item list-group-item-action">Perfil</a>
+                <a href="#" class="list-group-item list-group-item-action">Compras</a>
+                <a href="/carrito" class="list-group-item list-group-item-action">Carrito</a>
+                <a href="/administrartienda" class="list-group-item list-group-item-action active">Tienda</a>
+            </div>
         </div>
-      {{/each}}
-    </div>
-    <br><br><br>
-  </section>
+
+ <!-- contenedor derecha  -->
+        <div class="col-sm-9">
+                <div class="card contenedor">
+                            <div class="card-body">
+                                                                                                                  
+<!-- Card body  -->
+                                <div class="row">
+                                  <div class="col-md-12">
+                                      <h4>Tus anuncios</h4>
+                                      <hr>
+                                  </div>
+                                </div>
+                                    <div class="container bgd">
+                                      <a href="/altaproductos/{{this.idtienda}}" class="btn btn-info contenedor">Agregar producto.</a>
+                                        <br><br>
+                                          <h6>Productos:</h6>
+                                            <br>
+
+
+
+
+                                              <section class="container">
+                                                
+                                                <div class="row justify-content-center">
+                                                  
+                                                  {{#each anuncios}}
+                                                    <!--<a href="/cat/{{this.identificador}}">{{this.subcategoria}}</a>-->
+                                                          
+                                                      <div class="card col-12 col-md-4 bg-dark prod">
+                                                            
+                                                                <img class="card-img-top contenedor" src="{{this.foto.path}}" alt="Card image cap">
+                                                            
+                                                            
+                                                            <div class="card-body">
+                                                              
+
+                                                              <p class="card-title text-light">{{this.titulo}}</p>
+                                                              <p class="card-text text-light">{{this.descripcion}}</p>
+                                                            
+
+                                                            <ul class="list-group list-group-flush text-dark">
+                                                              <li class="list-group-item">Tienda: {{this.tienda_id.nombre}}</li>
+                                                              <li class="list-group-item">Precio: ${{this.precio}}</li>
+                                                            </ul>
+
+                                                            </div>
+
+                                                    
+                                              
+                                                    </div>
+
+                                                  {{/each}}
+
+                                                </div>
+
+                                              </section>
+
+
+
+                                    </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
 </div>
+                      <br>
+                    <br>
+                  <br>
+                <br>

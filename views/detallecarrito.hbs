@@ -1,28 +1,77 @@
-<section class="container">
-  <br>
-  <h6>Articulos dentro de la orden</h6>
-  <br>
-  <h5>Costo total: ${{carrito.costototal}}</h5>
-  <br>
-  <div class="row justify-content-md-center">
-    {{#each carrito}}
-      <!--<a href="/cat/{{this.identificador}}">{{this.subcategoria}}</a>-->
-      <div class="card col-lg-2 col-md-4 col-sm-12 col-12 text-white bg-dark" style="width: 100%; margin-right: 20px; margin-lefth: 20px; margin-bottom: 20px">
-        <a href="#"><img class="card-img-top" style="margin-top:5%;" src="{{this.orden.anuncio_id.foto.path}}" alt="Card image cap"></a>
-        <div class="card-body">
-          <a href="#" style="text-align: center; text-decoration: none; color: white;"><h5 class="card-title" style="font-size:15px;">{{this.orden.anuncio_id.titulo}}</h5></a>
-          <p class="card-text" style="font-size:10px;">{{this.descripcion}}</p>
-        </div>
-        <ul class="list-group list-group-flush text-dark" style="margin-bottom: 5%; font-size:10px;">
-          <li class="list-group-item">Cantidad: {{this.orden.cantidad}}</li>
-          <li class="list-group-item">Subtotal: ${{this.orden.subtotal}}</li>
-        </ul>
-        <div class="card-body">
-          <a href="/carrito/delete/{{this._id}}" class="btn btn-primary" style="font-size: 10px;">Eliminar</a>
-        </div>
-      </div>
-      <hr><br>
-    {{/each}}
+
+  <!-- left nav bar  -->
+  <div class="container contenedor">
+  	<div class="row shadow-lg cta-card">
+  		<div class="col-md-3 contenedor">
+  		     <div class="list-group ">
+                <a href="/perfil" class="list-group-item list-group-item-action">Perfil</a>
+                <a href="#" class="list-group-item list-group-item-action">Compras</a>
+                <a href="/carrito" class="list-group-item list-group-item-action active" >Carrito</a>
+                <a href="/administrartienda" class="list-group-item list-group-item-action">Tienda</a>
+              </div>
+              </div>
+                <div class="col-md-9">
+                  <div class="card contenedor">
+                    <div class="card-body">
+                      <div class="row col-12">
+                        <div class="justify-content-start">
+                            <h4>Articulos dentro de la orden</h4>         
+                        </div>          
+                      </div>
+                
+                        <hr>
+     
+<!-- Card body  -->
+  		            <div class="row bgd">
+  		                <div class="col">
+
+
+                            <div class="prod">
+                            <h5>Costo total: ${{carrito.costototal}}</h5>
+                            <button class="btn btn-success contenedor" type="submit" name="" value="">Pagar ahora</button>
+                            </div>
+
+                            <section class="container">
+                              
+                                <div class="row justify-content-center">
+                              {{#each carrito}}
+                            <!--<a href="/cat/{{this.identificador}}">{{this.subcategoria}}</a>-->
+
+                                    <div class="card col-12 col-md-3   bg-dark prod">
+                                        <img class="card-img-top contenedor" src="{{this.orden.anuncio_id.foto.path}}" alt="Card image">                  
+                                            <div class="card-body">
+                                                <h4 class="card-title text-light">{{this.orden.anuncio_id.titulo}}</h4>
+                                                <p class="card-text">{{this.descripcion}}</p>
+                                                  <ul class="list-group list-group-flush text-dark">
+                                                      <li class="list-group-item">Cantidad: {{this.orden.cantidad}}</li>
+                                                      <li class="list-group-item">Subtotal: ${{this.orden.subtotal}}</li>
+                                                  </ul>
+                                                <a href="/carrito/delete/{{this._id}}" class="btn btn-danger btn-sm contenedor" style="font-size: 10px;">Eliminar</a>
+                                            </div>
+                                    </div>
+                              {{/each}}
+                              </div>
+                              
+                            </section>
+
+  		                </div>
+  		            </div>
+
+  		        </div>
+  		    </div>
+  		</div>
+  	</div>
   </div>
-  <br><br><br>
-</section>
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+

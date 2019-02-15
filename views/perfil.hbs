@@ -1,8 +1,14 @@
+ 
+<!-- Avatar img 
+
+   
+   -->
 
 
-  <div class="container">
-  	<div class="row">
-  		<div class="col-md-3 ">
+  <!-- left nav bar  -->
+  <div class="container contenedor">
+  	<div class="row shadow-lg cta-card">
+  		<div class="col-md-3 contenedor">
   		     <div class="list-group ">
                 <a href="#" class="list-group-item list-group-item-action active">Perfil</a>
                 <a href="#" class="list-group-item list-group-item-action">Compras</a>
@@ -15,22 +21,31 @@
                     <div class="card-body">
                       <div class="row col-12">
                         <div class="justify-content-start">
-                            <h4>{{perfil.username}}</h4>         
+                            <h4 class="text-secondary"><i class="text-dark">Bienvenido</i> {{perfil.username}}</h4>         
                         </div>          
                       </div>
                 
                         <hr>
-
+     
 <!-- Card body  -->
-  		            <div class="row">
+  		            <div class="row bgd">
   		                <div class="col-sm-12">
+
+                            <div class="d-flex flex-row-reverse contenedor">
+                                <div class="card-img-right">
+                                    <img src="/images/avatar.svg" class="img-fluid avatar" alt="">
+                                </div>
+                            </div>
+
+
+
   		                    <form>
                                 <div class="form-group row">
-                                  <label for="username" class="col-4 col-form-label"> <h1></h1></label>
+                                  <label for="username" class="col-4 col-form-label"> </label>
                                 </div>
 
                                 <div class="form-group row">
-                                  <label for="name" class="col-4 col-form-label">suario OSS</label>
+                                  <label for="name" class="col-4 col-form-label">Usuario</label>
                                   <div class="col-8">
                                     <label id="name" name="name" placeholder="First Name" class="form-control here" type="text"><h5>{{perfil.username}}</h5></label>
                                   </div>
@@ -44,16 +59,8 @@
                                   </div>
                                 </div>
 
-
-                                <div class="form-group row">
-                                  <label for="text" class="col-4 col-form-label">Tiendas</label>
-                                  <div class="col-8">
-                                    <label id="name" name="name" placeholder="First Name" class="form-control here" type="text"><h5>{{tiendas.nombre}}</h5></label>
-                                  </div>
-                                </div>
-
-
-                              </form>
+                                                
+                          </form>
   		                </div>
   		            </div>
 
@@ -64,3 +71,11 @@
   </div>
 
 
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>

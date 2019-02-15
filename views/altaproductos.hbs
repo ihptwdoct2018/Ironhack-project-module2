@@ -1,108 +1,162 @@
-<div class="container">
-  <div class="">
-    {{#if categoria}}
-      <p>Categorias:</p>
-      {{#each categoria}}
-        <a  href="/altaproductos/cat/{{this.identificador}}/{{this.idtienda}}" style="text-decoration: none;">{{this.categoria}}</a>
-        <br>
-      {{/each}}
-    {{/if}}
 
-    {{#if subcategoria}}
-      <a href="/altaproductos/{{subcategoria.[0].idtienda}}">Anterior...</a>
-      <br><br>
-      {{#each subcategoria}}
-        <a href="/altaproductos/cat/{{this.idcat}}/{{this.identificador}}/{{this.idtienda}}"  style="text-decoration: none;">{{this.subcategoria}}</a>
-        <br>
-      {{/each}}
-    {{/if}}
 
-    {{#if subcategoria1}}
-      <a href="/altaproductos/cat/{{subcategoria1.[0].idcat}}/{{subcategoria1.[0].idtienda}}">Anterior...</a>
-      <br><br>
-      {{#each subcategoria1}}
-        <a href="/altaproductos/cat/{{this.idcat}}/{{this.idsubcat}}/{{this.identificador}}/{{this.idtienda}}"  style="text-decoration: none;">{{this.subcategoria}}</a>
-        <br>
-      {{/each}}
-    {{/if}}
+<!-- Aqui adentro todo el menu y card  -->
+<div class="container contenedor">
+  	<div class="row shadow-lg cta-card">
+        <!-- menu izquierda con las categorias  -->
+        <div class="col-md-3 contenedor">
+          <div class="list-group ">
+              <p>Categorias:</p>
 
-    {{#if subcategoria2}}
-      <a href="/altaproductos/cat/{{subcategoria2.[0].idcat}}/{{subcategoria2.[0].idsubcat}}/{{subcategoria2.[0].idtienda}}">Anterior...</a>
-      <br><br>
-      {{#each subcategoria2}}
-        <a href="/altaproductos/cat/{{this.idcat}}/{{this.idsubcat}}/{{this.idsubcat2}}/{{this.identificador}}/{{this.idtienda}}"  style="text-decoration: none;">{{this.subcategoria}}</a>
-        <br>
-      {{/each}}
-    {{/if}}
-  </div>
-  <div class="col-sm-6 offset-sm-1">
-      <div class="info-form">
-        {{#if niveles}}
-        <h5 class="display-5 text-center">Captura los datos de tu anuncio!</h5>
-        <br>
-          <a href="/altaproductos/{{niveles.idtienda}}">Ir a Categorias...</a>
-          <br><br>
-          <form class="md-form" action="/administrartienda/altaproductos/add" method="post"  enctype="multipart/form-data">
-            <div class="form-group">
-              <label for="titulo">Titulo anuncio: </label>
-              <input class="form-control" type="text" name="titulo" value="" required="required" placeholder="Ingresa titulo anuncio">
-            </div>
-            <div class="form-group">
-              <label for="descripcion">Descripcion:</label>
-              <input class="form-control" type="text" name="descripcion" value="" required="required" placeholder="Ingresa descripcion anuncio">
-            </div>
-            <div class="form-group">
-              <label for="precio">Precio unitario:</label>
-              <input class="form-control" type="number" name="precio" value="" required="required" placeholder="Ingresa precio articulo">
-            </div>
-            <div class="form-group">
-              <label for="stock">Existencias:</label>
-              <input class="form-control" type="number" name="stock" value="" required="required" placeholder="Ingresa existencias">
-            </div>
-            <hr>
-            <div class="form-group">
-              <label for="envio">Introduzca datos de envío</label>
-              <br><br>
-              <label for="origen">Origen del envio</label>
-              <select class="form-control" name="origen" placeholder="Selecciona pais" required="required">
-                <option value="Mexico">Mexico</option>
-                <option value="Estados Unidos">Estados Unidos</option>
-                <option value="Europa">Europa</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label for="tiempo">Periodo de entrega</label>
-              <select class="form-control" name="tiempo" placeholder="Selecciona dias" required="required">
-                <option value="5 dias">5 dias</option>
-                <option value="10 dias">10 dias</option>
-                <option value="15 dias">15 dias</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label for="gastosenvio">Gastos de envio:</label>
-              <input class="form-control" type="number" name="gastosenvio" value="" required="required" placeholder="Ingresa gastos de envio">
-            </div>
-            <div class="form-group">
-              <label for="transporte">Medio de envio</label>
-              <select class="form-control" name="transporte" placeholder="Selecciona medio de envio" required="required">
-                <option value="Fedex">Fedex</option>
-                <option value="DHL">DHL</option>
-                <option value="UPS">UPS</option>
-              </select>
-            </div>
-            <hr>
-            <div class="form-group">
-              <label for="imagen">Agrega una imagen:</label>
-              <input class="form-control btn" type="file" name="photo" value="" required="required">
-            </div>
-            <input type="text" name="categoria" value="{{niveles.categoria}}" style="display: none;">
-            <input type="text" name="subcategoria" value="{{niveles.subcategoria}}" style="display: none;">
-            <input type="text" name="subcategoria_padre" value="{{niveles.subcategoria_padre}}" style="display: none;">
-            <input type="text" name="tienda_id" value="{{niveles.idtienda}}" style="display: none;">
-            <button class="btn btn-primary" type="submit" name="" value="">Guardar</button>
-            <br><br><br><br>
-          </form>
-        {{/if}}
-      </div>
+                    {{#if subcategoria}}
+                      <a href="/altaproductos/{{subcategoria.[0].idtienda}}" class="btn btn-outline-warning">Anterior...</a>  
+                    {{/if}}
+
+                    {{#if subcategoria1}}
+                      <a href="/altaproductos/cat/{{subcategoria1.[0].idcat}}/{{subcategoria1.[0].idtienda}}" class="btn btn-outline-warning">Anterior...</a>
+                    {{/if}}
+                    {{#if subcategoria2}}
+                      <a href="/altaproductos/cat/{{subcategoria2.[0].idcat}}/{{subcategoria2.[0].idsubcat}}/{{subcategoria2.[0].idtienda}}" class="btn btn-outline-warning">Anterior...</a>
+                    {{/if}}              
+
+                      <!-- despliega categorias -->              
+                          {{#if categoria}}
+                            {{#each categoria}}
+                                <a href="/altaproductos/cat/{{this.identificador}}/{{this.idtienda}}" class="list-group-item list-group-item-action btn btn-outline-primary">{{this.categoria}}</a>
+                            {{/each}}
+                          {{/if}}
+                      <!-- despliega subcategorias Subcategoria -->
+                        {{#if subcategoria}}
+                              {{#each subcategoria}}
+                                <a href="/altaproductos/cat/{{this.idcat}}/{{this.identificador}}/{{this.idtienda}}" class="list-group-item list-group-item-action btn btn-outline-primary">{{this.subcategoria}}</a>
+                              {{/each}}
+                          {{/if}}
+                      <!-- despliega subcategorias Subcategoria level 2 -->
+                          {{#if subcategoria1}}
+                              {{#each subcategoria1}}
+                                <a href="/altaproductos/cat/{{this.idcat}}/{{this.idsubcat}}/{{this.identificador}}/{{this.idtienda}}" class="list-group-item list-group-item-action btn btn-outline-primary">{{this.subcategoria}}</a>
+                              {{/each}}
+                          {{/if}}
+                      <!-- despliega subcategorias Subcategoria level 3 last -->
+                          {{#if subcategoria2}}
+                              {{#each subcategoria2}}
+                                <a href="/altaproductos/cat/{{this.idcat}}/{{this.idsubcat}}/{{this.idsubcat2}}/{{this.identificador}}/{{this.idtienda}}" class="list-group-item list-group-item-action btn btn-outline-primary">{{this.subcategoria}}</a>
+                              {{/each}}
+                          {{/if}}              
+
+                          {{#if niveles}}
+                          <a href="/altaproductos/{{niveles.idtienda}}" class="btn-info btn-sm disable">Ir a Categorias...</a>
+                          {{/if}}
+
+          </div>
+        </div> <!-- final de menu izquierda con las categorias  -->
+
+ <!-- contenedor derecha  -->
+              <div class="col-sm-9 ">
+                  <div class="card contenedor">
+                    <div class="card-body">                                                                                                                                              
+<!-- Card body  -->     
+
+                        <div class="row ">
+                          <div class="col-md-12">
+                              <span><i><p>Selecciona la categoria e información de tu producto</p></i></span>
+                              <hr>
+                          </div>
+                        </div>
+
+                        <div class="container bgd">
+                            <div class="">
+                                <div class="info-form">
+                                    {{#if niveles}}
+                                      <h5 class="display-5 text-center">Ingresa aqui los datos de tu anuncio!</h5><br><hr>
+                                      
+                              
+                                        <form class="md-form" action="/administrartienda/altaproductos/add" method="post"  enctype="multipart/form-data">
+
+                                              <div class="form-group contenedor">
+                                                <label for="titulo">Titulo anuncio: </label>
+                                                <input class="form-control" type="text" name="titulo" value="" required="required" placeholder="Ingresa titulo anuncio">
+                                              </div>
+
+                                              <div class="form-group">
+                                                  <label for="descripcion">Descripcion:</label>
+                                                  <input class="form-control" type="text" name="descripcion" value="" required="required" placeholder="Ingresa descripcion anuncio">
+                                              </div>
+
+                                              <div class="form-group">
+                                                <label for="precio">Precio unitario:</label>
+                                                <input class="form-control" type="number" name="precio" value="" required="required" placeholder="Ingresa precio articulo">
+                                              </div>
+
+                                              <div class="form-group">
+                                                <label for="stock">Existencias:</label>
+                                                <input class="form-control" type="number" name="stock" value="" required="required" placeholder="Ingresa existencias">
+                                              </div><br><hr>
+                                                                            
+                                              <div class="form-group">
+                                                <label for="envio"><h6>Introduzca datos de envío</h6></label>
+                                                <br><br>
+                                                <label for="origen">Origen del envio</label>
+                                                <select class="form-control" name="origen" placeholder="Selecciona pais" required="required">
+                                                  <option value="Mexico">Mexico</option>
+                                                  <option value="Estados Unidos">Estados Unidos</option>
+                                                  <option value="Europa">Europa</option>
+                                                </select>
+                                              </div>
+
+                                              <div class="form-group">
+                                                <label for="tiempo">Periodo de entrega</label>
+                                                <select class="form-control" name="tiempo" placeholder="Selecciona dias" required="required">
+                                                  <option value="5 dias">5 dias</option>
+                                                  <option value="10 dias">10 dias</option>
+                                                  <option value="15 dias">15 dias</option>
+                                                </select>
+                                              </div>
+
+                                              <div class="form-group">
+                                                <label for="gastosenvio">Gastos de envio:</label>
+                                                <input class="form-control" type="number" name="gastosenvio" value="" required="required" placeholder="Ingresa gastos de envio">
+                                              </div>
+
+                                              <div class="form-group">
+                                                  <label for="transporte">Medio de envio</label>
+                                                  <select class="form-control" name="transporte" placeholder="Selecciona medio de envio" required="required">
+                                                    <option value="Fedex">Fedex</option>
+                                                    <option value="DHL">DHL</option>
+                                                    <option value="UPS">UPS</option>
+                                                  </select>
+                                              </div><hr>
+
+                                              <div class="form-group contenedor col-3">
+                                                  <label for="imagen">Agrega una imagen:</label>
+                                                  <input class="btn-outline-secondary" type="file" name="photo" value="" required="required">
+                                              </div>
+                                                      <input type="text" name="categoria" value="{{niveles.categoria}}" style="display: none;">
+                                                      <input type="text" name="subcategoria" value="{{niveles.subcategoria}}" style="display: none;">
+                                                      <input type="text" name="subcategoria_padre" value="{{niveles.subcategoria_padre}}" style="display: none;">
+                                                      <input type="text" name="tienda_id" value="{{niveles.idtienda}}" style="display: none;">
+                                                      <button class="btn btn-primary contenedor" type="submit" name="" value="">Publicar</button>
+                                                      <br><br><br><br>
+                                        </form>
+                                    {{/if}}
+                                </div>
+                            </div>
+                        </div>
+  	                </div>
+                  </div>
+              </div><!-- final del bloque derecho -->
     </div>
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
