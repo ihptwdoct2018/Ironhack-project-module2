@@ -5,7 +5,7 @@
   		<div class="col-md-3 contenedor">
   		     <div class="list-group ">
                 <a href="/perfil" class="list-group-item list-group-item-action">Perfil</a>
-                <a href="#" class="list-group-item list-group-item-action">Compras</a>
+                <a href="/compras" class="list-group-item list-group-item-action">Compras</a>
                 <a href="/carrito" class="list-group-item list-group-item-action active" >Carrito</a>
                 <a href="/administrartienda" class="list-group-item list-group-item-action">Tienda</a>
               </div>
@@ -15,12 +15,12 @@
                     <div class="card-body">
                       <div class="row col-12">
                         <div class="justify-content-start">
-                            <h4>Articulos dentro de la orden</h4>         
-                        </div>          
+                            <h4>Articulos dentro de la orden</h4>
+                        </div>
                       </div>
-                
+
                         <hr>
-     
+
 <!-- Card body  -->
   		            <div class="row bgd">
   		                <div class="col">
@@ -39,13 +39,13 @@
   {{/if}}
 
                             <section class="container">
-                              
+
                                 <div class="row justify-content-center">
                               {{#each carrito}}
                             <!--<a href="/cat/{{this.identificador}}">{{this.subcategoria}}</a>-->
 
                                     <div class="card col-12 col-md-3   bg-dark prod">
-                                        <img class="card-img-top contenedor" src="{{this.orden.anuncio_id.foto.path}}" alt="Card image">                  
+                                        <img class="card-img-top contenedor" src="{{this.orden.anuncio_id.foto.path}}" alt="Card image">
                                             <div class="card-body">
                                                 <h4 class="card-title text-light">{{this.orden.anuncio_id.titulo}}</h4>
                                                 <p class="card-text">{{this.descripcion}}</p>
@@ -58,7 +58,7 @@
                                     </div>
                               {{/each}}
                               </div>
-                              
+
                             </section>
 
   		                </div>
@@ -79,6 +79,3 @@
 <br>
 <br>
 <br>
-
-
-

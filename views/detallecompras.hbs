@@ -1,0 +1,33 @@
+<div class="container">
+  <br>
+  <h4>Detalle de tus compras.</h4>
+  {{#each usercompras}}
+    <br>
+    <h5>Folio compra: {{this.folio}}</h5>
+
+      <table class="table">
+      <thead class="thead-dark">
+      <tr>
+        <th scope="col">Articulo</th>
+        <th scope="col">Costo unitario</th>
+        <th scope="col">Cantidad</th>
+        <th scope="col">Subtotal</th>
+      </tr>
+      </thead>
+      <tbody>
+      {{#each this.articulos}}
+        <tr>
+          <td>{{this.titulo}}</td>
+          <td>${{this.precio}}</td>
+          <td>{{this.cantidad}}</td>
+          <td>${{this.subtotal}}</td>
+        </tr>
+      {{/each}}
+      </tbody>
+      </table>
+    <h5>Costo total compra: ${{this.costototal}}</h5>
+    <br>
+    <hr>
+  {{/each}}
+</div>
+<br><br><br><br>

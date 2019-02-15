@@ -19,7 +19,8 @@ const compraSchema = new Schema({
     entrecalle1: String,
     entrecalle2: String
   },
-  costototal: Number
+  costototal: Number,
+  estatus : String
 });
 
 const Compra = mongoose.model('Compra', compraSchema);

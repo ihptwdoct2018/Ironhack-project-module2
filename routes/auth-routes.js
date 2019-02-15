@@ -254,6 +254,18 @@ authRoutes.get('/altaproductos/cat/:idcat/:idsubcat/:idsubcat2/:idsubcat3/:idtie
     })
 });
 
+authRoutes.get("/producto/update/:idproducto/:idtienda", ensureLogin.ensureLoggedIn(),(req, res, next) =>{
+  let idproducto = req.params.idproducto;
+  let idtienda = req.params.idtienda;
+
+  Anuncios.findOne({$and : [{"_id": idproducto},{"tienda_id": idtienda}]})
+  .then(anuncio=>{
+    console.log(anuncio)
+    res.render('modificaproducto', { anuncio })
+  })
+  .catch(err=>console.log(err))
+});
+
 //Rutas Perfil
 /*GET perfil*/
 
@@ -421,23 +433,32 @@ authRoutes.get('/compradatosenvio/:idcompra', ensureLogin.ensureLoggedIn(),(req,
 
 authRoutes.get('/compras', ensureLogin.ensureLoggedIn(),(req, res, next) =>{
   let idusuario = req.user._id;
-
-  Compras.find({"user_id": idusuario})
-  .populate({path: 'compra'})
-  .exec(function(err,docs){
-    var options = {
-      path: "compra.anuncio",
-      model: 'Anuncios'
-    };
-
-    if(err) return re.json(500);
-    Compras.populate(docs,options,function(err, compras){
-      console.log(compras)
+  let usercompras = [];
+  Compras.find({$and : [{"user_id": idusuario}, {"estatus": "F" }]})
+  .populate("compra.anuncio")
+  .then(compras=>{
+    compras.forEach(compra=>{
+      let detallecompra = [];
+      compra.compra.forEach(detalle=>{
+        let item = {
+          titulo : detalle.anuncio.titulo,
+          precio : detalle.anuncio.precio,
+          cantidad : detalle.cantidad,
+          subtotal : detalle.subtotal
+        }
+        detallecompra.push(item);
+      })
+      let folio = compra._id
+      let comprafinal = {
+        articulos  : detallecompra,
+        costototal : compra.costototal,
+        folio      : folio
+      }
+      usercompras.push(comprafinal)
     })
+    res.render('detallecompras', { usercompras })
   })
-
-
-  //res.render('detallecompras', { compras })
+  .catch(err=>console.log(err))
 });
 
 module.exports = authRoutes;
