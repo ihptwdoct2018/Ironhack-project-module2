@@ -1,43 +1,13 @@
-
-  
 <div class="container">
-  	<div class="row">
-                <div class="col-md-3 ">
-                    <div class="list-group ">
-                          <a href="/perfil" class="list-group-item list-group-item-action">Perfil</a>
-                          <a href="#" class="list-group-item list-group-item-action">Compras</a>
-                          <a href="#" class="list-group-item list-group-item-action active">Carrito</a>
-                          <a href="/administrartienda" class="list-group-item list-group-item-action">Tienda</a>
-                      </div>  
-                </div>
-
-                <div class="col-md-9">
-                  <div class="card">
-                    <div class="card-body">
-                              
-                                <div class="row">
-                                  <div class="col-md-12">
-                                      <h4>Tú Carrito!</h4>
-                                      <hr>
-                                  </div>
-                                </div>
-
-                <div class="row">
-                      <div class="col-md-12">
-                     
-                            {{#if tiendas}}
-                              <div class="container text-secondary">
-                                <br>
-                                <a href="/altatienda"><h6>Nuevo anuncio</h6></a>
-                          
-                              </div>
-                              {{else}}
-                              <div class="container text-secondary">
-                                <br>
-                            
-                                <h6>El carrito esta vacio</h6>
-                              </div>
-                            {{/if}}
+  <div class="row">
+    <div class="col-md-3 ">
+        <div class="list-group ">
+          <a href="/perfil" class="list-group-item list-group-item-action">Perfil</a>
+          <a href="#" class="list-group-item list-group-item-action">Compras</a>
+          <a href="#" class="list-group-item list-group-item-action active">Carrito</a>
+          <a href="/administrartienda" class="list-group-item list-group-item-action">Tienda</a>
+        </div>
+    </div>
 
                             <section class="container">
                               <div class="row justify-content-md-center">
@@ -52,10 +22,28 @@
                               </div>
                             </section>
 
+              <section class="container">
+                <div class="row justify-content-md-center">
+                  {{#each tiendas}}
+                    <div class="card col-lg-2 col-md-4 col-sm-12 col-12 text-white bg-dark" style="width: 100%; margin-right: 20px; margin-lefth: 20px; margin-bottom: 20px">
+                      <a href="/detalletienda/{{this._id}}"><img class="card-img-top" style="margin-top:5%" src="{{this.foto.path}}" alt="Card image cap"></a>
+                      <div class="card-body">
+                        <a href="/detalletienda/{{this._id}}" style="text-align: center; text-decoration: none; color: white"><h5 class="card-title" style="font-size:15px;">{{this.nombre}}</h5></a>
                       </div>
-                  </div>
-  		        </div>
-  		    </div>
-  		 </div>
-  	</div>
+                    </div>
+                  {{/each}}
+                </div>
+              </section>
+            </div>
+          </div>
+	      </div>
+	    </div>
+	  </div>
+  </div>
+  <form class="md-form" action="/comprar" method="post">
+    <div class="form-group">
+      <button class="btn btn-primary" type="submit" name="" value="">Guardar</button>
+    </div>
+  </form>
+  <br><br><br><br>
 </div>

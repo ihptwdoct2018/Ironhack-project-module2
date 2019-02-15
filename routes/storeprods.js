@@ -3,37 +3,12 @@ const multer = require("multer");
 const Tienda = require('../models/Tienda')
 const Usuario = require('../models/Usuario')
 const Anuncios = require('../models/Anuncios')
+const Compras = require('../models/Compras')
+const Carrito = require('../models/Carrito')
 const upload = multer({dest: "./public/uploads"})
 
 const router  = express.Router();
 
-/*GET Tienda*/
-
-
-/*router.get('/detalletienda/:idtienda', (req, res, next) => {
-  let idtienda = req.params.idtienda;
-  res.render('detalletienda',{idtienda})
-});*/
-
-/*router.get('/administrartienda', (req, res, next) => {
-  Tienda.find()
-    .then(tiendas =>{
-      console.log(tiendas);
-      res.render('administrartienda', {tiendas})
-    })
-    .catch(err =>{
-      console.log(err)
-    })
-});*/
-
-/*router.get('/altatienda', (req, res, next) => {
-  res.render('altatienda')
-});*/
-
-/*router.get('/altaproductos:idtienda', (req, res, next) => {
-  res.render('altaproductos')
-});
-*/
 /* POST Tienda */
 router.post("/administrartienda/altatienda/add", upload.single("photo"), (req, res, next)=>{
   const newTienda = new Tienda({
@@ -56,11 +31,17 @@ router.post("/administrartienda/altatienda/add", upload.single("photo"), (req, r
       .then((usuarioupdate)=>{
         res.redirect(301,"/administrartienda")
       })
-      .catch(err=>res.render("altatienda"));
+      .catch(err=>{
+        console.log(err);
+        res.render("altatienda")});
     })
-    .catch(err=>res.render("altatienda"));
+    .catch(err=>{
+      console.log(err);
+      res.render("altatienda")});
   })
-  .catch(err=>res.render("altatienda"));
+  .catch(err=>{
+    console.log(err);
+    res.render("altatienda")});
 })
 
 
@@ -98,6 +79,66 @@ router.post("/administrartienda/altaproductos/add", upload.single("photo"), (req
   .catch(err=>{
     console.log(err)
     res.redirect(`/altaproductos/${idtienda}`)});
+})
+
+
+/*POST comprar*/
+router.post("/comprar/:iduser/:costototal", (req, res, next)=>{
+  let iduser = req.params.iduser;
+  let compra = [];
+  let costototal = req.params.costototal;
+  Carrito.find({"user_id": iduser})
+  .then(carrito=>{
+    carrito.forEach(carrito=>{
+      let orden = {anuncio  : carrito.orden.anuncio_id,
+                   cantidad : carrito.orden.cantidad,
+                   subtotal : carrito.orden.subtotal
+      }
+
+      compra.push(orden)
+    })
+
+    console.log(compra)
+    const newCompra = new Compras({
+      user_id     : iduser,
+      compra      : compra,
+      envio       : {},
+      costototal  : costototal
+    });
+
+    newCompra.save()
+    .then(comprasave=>{
+      res.redirect(`/compradatosenvio/${comprasave._id}`)
+    })
+    .catch(err=>console.log(err))
+  })
+  .catch(err=>console.log(err))
+})
+
+router.post("/compra/update/:idcompra", (req, res, next)=>{
+  let iduser = req.user._id;
+  let idcompra = req.params.idcompra;
+  console.log(req.body)
+  let envio = {calle  : req.body.calle,
+               colonia : req.body.colonia,
+               municipio : req.body.municipio,
+               estado : req.body.estado,
+               postal : req.body.postal,
+               referencia1 : req.body.referencia1,
+               referencia2 : req.body.referencia2,
+               entrecalle1 : req.body.entrecalle1,
+               entrecalle2 : req.body.entrecalle2
+  }
+
+  Compras.updateOne({"_id": idcompra},{$set:{envio: envio}})
+  .then(compraupdate=>{
+    Carrito.deleteMany({"user_id": iduser})
+    .then(carritodelete=>{
+      res.redirect("/perfil")
+    })
+    .catch(err=>console.log(err))
+  })
+  .catch(err=>console.log(err))
 })
 
 module.exports = router;

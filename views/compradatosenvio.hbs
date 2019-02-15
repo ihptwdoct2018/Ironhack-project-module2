@@ -1,0 +1,88 @@
+<div id="container" class="container ">
+  <div class="row">
+    <div class="col-sm-6 offset-sm-1">
+      <h5 class="display-5 text-center">Captura datos para envio y cobro!</h5>
+      <br>
+      <div class="info-form">
+        <form class="md-form" action="/compra/update/{{idcompra}}" method="post">
+          <div class="form-group">
+            <h5>Datos de envio:</h5>
+          </div>
+          <div class="form-group">
+            <label for="calle">Calle:</label>
+            <input class="form-control" type="text" name="calle" value="" placeholder="Ingresa calle" required="required">
+          </div>
+          <div class="form-group">
+            <label for="colonia">Colonia:</label>
+            <input class="form-control" type="text" name="colonia" value="" placeholder="Ingresa colonia" required="required">
+          </div>
+          <div class="form-group">
+            <label for="municipio">Municipio:</label>
+            <input class="form-control" type="text" name="municipio" value="" placeholder="Ingresa municipio" required="required">
+          </div>
+          <div class="form-group">
+            <label for="estado">Estado:</label>
+            <input class="form-control" type="text" name="estado" value="" placeholder="Ingresa estado" required="required">
+          </div>
+          <div class="form-group">
+            <label for="postal">Codigo postal:</label>
+            <input class="form-control" type="text" name="postal" value="" placeholder="Ingresa codigo postal" required="required">
+          </div>
+          <div class="form-group">
+            <label for="referencia1">Referencia 1:</label>
+            <input class="form-control" type="text" name="referencia1" value="" placeholder="Ingresa referencia (Calle, centro comercial, avenida)" required="required">
+          </div>
+          <div class="form-group">
+            <label for="referencia2">Referencia 2:</label>
+            <input class="form-control" type="text" name="referencia2" value="" placeholder="Ingresa referencia (Calle, centro comercial, avenida)">
+          </div>
+          <div class="form-group">
+            <label for="entrecalle1">Entre calle 1:</label>
+            <input class="form-control" type="text" name="entrecalle1" value="" placeholder="Ingresa calle 1" required="required">
+          </div>
+          <div class="form-group">
+            <label for="entrecalle2">Entre calle 2:</label>
+            <input class="form-control" type="text" name="entrecalle2" value="" placeholder="Ingresa calle 2">
+          </div>
+
+          <div class="form-group">
+            <h5>Datos de cobro:</h5>
+          </div>
+          <label for="tipo">Tipo tarjeta:</label>
+          <select class="form-control" name="tipo" placeholder="Selecciona tipo tarjeta" required="required">
+            <option value="Visa">Visa</option>
+            <option value="MasterCard">MasterCard</option>
+            <option value="American Express">American Express</option>
+          </select>
+          <div class="form-group">
+            <label for="tarjeta">Numero de tarjeta:</label>
+            <input class="form-control" type="number" name="tarjeta" value="" placeholder="Ingresa 16 digitos de tarjeta">
+          </div>
+
+          <div class="form-group">
+            <label for="codigo">Codigo de seguridad:</label>
+            <input class="form-control" type="password" name="codigo" value="" placeholder="Ingresa codigo de seguridad">
+          </div>
+
+          <div class="form-group">
+            <h6>Fecha vencimiento:</h6>
+          </div>
+          <div class="container">
+            <div class="row">
+              <div class="form-group">
+                <label for="mes">MES:</label>
+                <input class="form-control" type="password" name="mes" value="">
+              </div>
+              <div class="form-group">
+                <label for="anio">AÑO:</label>
+                <input class="form-control" type="password" name="anio" value="">
+              </div>
+            </div>
+          </div>
+          <button class="btn btn-primary" type="submit" name="" value="">COMPRAR</button>
+        </form>
+        <br><br><br><br>
+      </div>
+    </div>
+  </div>
+</div>
