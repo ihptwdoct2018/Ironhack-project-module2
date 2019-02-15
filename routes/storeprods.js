@@ -82,6 +82,26 @@ router.post("/administrartienda/altaproductos/add", upload.single("photo"), (req
 })
 
 
+/*POST modifica producto tienda*/
+
+router.post("/administrartienda/modificaproducto/:idtienda/:idanuncio", (req,res)=>{
+  let idtienda = req.params.idtienda;
+  let idanuncio = req.params.idanuncio;
+  let titulo = req.body.titulo;
+  let descripcion = req.body.descripcion;
+  let precio = req.body.precio;
+  let stock = req.body.stock;
+
+  Anuncios.updateOne({$and: [{"_id": idanuncio},{"tienda_id": idtienda}]},{$set:{"titulo": titulo, "descripcion": descripcion, "precio": precio, "stock": stock}})
+  .then((anuncio)=>{
+    res.redirect(301,`/detalletienda/${idtienda}`)
+  })
+  .catch(err=>{
+    console.log(err)
+    res.render("modificaproducto",{anuncio})
+  })
+})
+
 /*POST comprar*/
 router.post("/comprar/:iduser/:costototal", (req, res, next)=>{
   let iduser = req.params.iduser;
@@ -98,12 +118,12 @@ router.post("/comprar/:iduser/:costototal", (req, res, next)=>{
       compra.push(orden)
     })
 
-    console.log(compra)
     const newCompra = new Compras({
       user_id     : iduser,
       compra      : compra,
       envio       : {},
-      costototal  : costototal
+      costototal  : costototal,
+      estatus     : "P"
     });
 
     newCompra.save()
@@ -118,7 +138,7 @@ router.post("/comprar/:iduser/:costototal", (req, res, next)=>{
 router.post("/compra/update/:idcompra", (req, res, next)=>{
   let iduser = req.user._id;
   let idcompra = req.params.idcompra;
-  console.log(req.body)
+
   let envio = {calle  : req.body.calle,
                colonia : req.body.colonia,
                municipio : req.body.municipio,
@@ -130,7 +150,7 @@ router.post("/compra/update/:idcompra", (req, res, next)=>{
                entrecalle2 : req.body.entrecalle2
   }
 
-  Compras.updateOne({"_id": idcompra},{$set:{envio: envio}})
+  Compras.updateOne({"_id": idcompra},{$set:{envio: envio, estatus: "F"}})
   .then(compraupdate=>{
     Carrito.deleteMany({"user_id": iduser})
     .then(carritodelete=>{

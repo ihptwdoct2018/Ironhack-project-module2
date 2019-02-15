@@ -7,7 +7,7 @@
         <div class="col-md-3 contenedor">
             <div class="list-group ">
                 <a href="/perfil" class="list-group-item list-group-item-action">Perfil</a>
-                <a href="#" class="list-group-item list-group-item-action">Compras</a>
+                <a href="/compras" class="list-group-item list-group-item-action">Compras</a>
                 <a href="/carrito" class="list-group-item list-group-item-action">Carrito</a>
                 <a href="/administrartienda" class="list-group-item list-group-item-action active">Tienda</a>
             </div>
@@ -17,7 +17,7 @@
         <div class="col-sm-9">
                 <div class="card contenedor">
                             <div class="card-body">
-                                                                                                                  
+
 <!-- Card body  -->
                                 <div class="row">
                                   <div class="col-md-12">
@@ -35,33 +35,34 @@
 
 
                                               <section class="container">
-                                                
+
                                                 <div class="row justify-content-center">
-                                                  
+
                                                   {{#each anuncios}}
                                                     <!--<a href="/cat/{{this.identificador}}">{{this.subcategoria}}</a>-->
-                                                          
+
                                                       <div class="card col-12 col-md-4 bg-dark prod">
-                                                            
+
                                                                 <img class="card-img-top contenedor" src="{{this.foto.path}}" alt="Card image cap">
-                                                            
-                                                            
+
+
                                                             <div class="card-body">
-                                                              
+
 
                                                               <p class="card-title text-light">{{this.titulo}}</p>
                                                               <p class="card-text text-light">{{this.descripcion}}</p>
-                                                            
+
 
                                                             <ul class="list-group list-group-flush text-dark">
                                                               <li class="list-group-item">Tienda: {{this.tienda_id.nombre}}</li>
                                                               <li class="list-group-item">Precio: ${{this.precio}}</li>
+                                                              <li class="list-group-item">Existencias: {{this.stock}}</li>
                                                             </ul>
-
+                                                            <a href="/producto/update/{{this._id}}/{{this.tienda_id._id}}" class="btn btn-primary btn-sm contenedor" style="font-size: 10px;">Modificar</a>
                                                             </div>
 
-                                                    
-                                              
+
+
                                                     </div>
 
                                                   {{/each}}

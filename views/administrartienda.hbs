@@ -4,7 +4,7 @@
         <div class="col-md-3 contenedor">
             <div class="list-group ">
                 <a href="/perfil" class="list-group-item list-group-item-action">Perfil</a>
-                <a href="#" class="list-group-item list-group-item-action">Compras</a>
+                <a href="/compras" class="list-group-item list-group-item-action">Compras</a>
                 <a href="/carrito" class="list-group-item list-group-item-action">Carrito</a>
                 <a href="/administrartienda" class="list-group-item list-group-item-action active">Tienda</a>
             </div>
@@ -12,7 +12,7 @@
  <!-- contenedor derecha  -->
         <div class="col-sm-9">
                 <div class="card contenedor">
-                            <div class="card-body">                                                                                                                                                      
+                            <div class="card-body">
 <!-- Card body  -->
                                   <div class="row">
                                     <div class="col-md-12">
@@ -34,18 +34,18 @@
                                                               <h6>Aun no tiene ninguna tienda.</h6>
                                                           </div>
                                                       {{/if}}
-                                        <section class="container">                          
+                                        <section class="container">
                                             <div class="row justify-content-center">
-                                                {{#each tiendas}}                                              
+                                                {{#each tiendas}}
                                                     <div class="card col-12 col-md-3   bg-dark prod">
                                                         <a href="/detalletienda/{{this._id}}"><img class="card-img-top  contenedor" src="{{this.foto.path}}" alt="Card image cap"></a>
-                        
+
                                                         <div class="card-body">
-                                                            <a href="/detalletienda/{{this._id}}"><p class="card-title text-light">{{this.nombre}}</p></a>                                                                                                                                                                
+                                                            <a href="/detalletienda/{{this._id}}"><p class="card-title text-light">{{this.nombre}}</p></a>
                                                         </div>
                                                     </div>
                                                 {{/each}}
-                                            </div>                                                    
+                                            </div>
                                         </section>
   		                            </div>
   		                      </div>
@@ -62,7 +62,3 @@
 <br>
 <br>
 <br>
-
-
-
-
