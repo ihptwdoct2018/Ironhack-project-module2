@@ -50,7 +50,7 @@
           </div>
           <div class="form-group">
             <label for="postal">Codigo postal:</label>
-            <input class="form-control" type="text" name="postal" value="" placeholder="Ingresa codigo postal" required="required">
+            <input class="form-control" type="text" name="postal" value="" placeholder="Ingresa codigo postal" required="required" maxlength="5">
           </div>
           <div class="form-group">
             <label for="referencia1">Referencia 1:</label>
@@ -80,12 +80,12 @@
           </select>
           <div class="form-group">
             <label for="tarjeta">Numero de tarjeta:</label>
-            <input class="form-control" type="number" name="tarjeta" value="" placeholder="Ingresa 16 digitos de tarjeta">
+            <input class="form-control" type="number" name="tarjeta" value="" placeholder="Ingresa 16 digitos de tarjeta" maxlength="16">
           </div>
 
           <div class="form-group">
             <label for="codigo">Codigo de seguridad:</label>
-            <input class="form-control" type="password" name="codigo" value="" placeholder="Ingresa codigo de seguridad">
+            <input class="form-control" type="password" name="codigo" value="" placeholder="Ingresa codigo de seguridad" maxlength="4">
           </div>
 
           <div class="form-group">
@@ -93,16 +93,17 @@
           </div>
           <div class="container">
 
-                  <div class="row">
-                      <div class="form-group">
-                        <label for="mes">MES:</label>
-                        <input class="cvc2" type="password" name="mes" value="">
-                      </div>
-                      <div class="form-group">
-                        <label for="anio">AÑO:</label>
-                        <input class="cvc2" type="password" name="anio" value="">
-                      </div>
-                    </div>
+
+            <div class="row">
+              <div class="form-group">
+                <label for="mes">MES:</label>
+                <input class="cvc2" type="number" name="mes" value="" maxlength="2" min="1" max="12">
+              </div>
+              <div class="form-group">
+                <label for="anio">AÑO:</label>
+                <input class="cvc2" type="number" name="anio" value="" maxlength="2" min="1" max="99">
+              </div>
+            </div>
           </div>
           <button class="btn btn-primary" type="submit" name="" value="">COMPRAR</button>
         </form>                            

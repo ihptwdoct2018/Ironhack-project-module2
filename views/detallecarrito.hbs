@@ -44,11 +44,9 @@
                               {{#each carrito}}
                             <!--<a href="/cat/{{this.identificador}}">{{this.subcategoria}}</a>-->
 
-                                    <div class="card col-12 col-lg-4   bg-dark prod">
+                                    <div class="card col-12 col-md-6 col-lg-4 bg-dark prod">
                                         <img class="card-img-top contenedor" src="{{this.orden.anuncio_id.foto.path}}" alt="Card image">
-                                            
                                             <div class="card-body">
-
                                                 <h4 class="card-title text-light">{{this.orden.anuncio_id.titulo}}</h4>
                                                 <p class="card-text">{{this.descripcion}}</p>
                                                   <ul class="list-group list-group-flush text-dark">
