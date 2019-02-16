@@ -461,4 +461,5 @@ authRoutes.get('/compras', ensureLogin.ensureLoggedIn(),(req, res, next) =>{
   .catch(err=>console.log(err))
 });
 
+
 module.exports = authRoutes;
