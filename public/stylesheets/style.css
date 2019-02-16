@@ -1,6 +1,9 @@
 body {
   font-family: 'Montserrat', sans-serif; }
 
+hr {
+  width: 80%; }
+
 .logo {
   width: 125px;
   margin-right: 50px; }

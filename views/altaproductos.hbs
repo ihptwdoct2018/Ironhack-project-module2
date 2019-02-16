@@ -6,7 +6,7 @@
         <!-- menu izquierda con las categorias  -->
         <div class="col-md-3 contenedor">
           <div class="list-group ">
-              <p>Categorias:</p>
+              <p>Categorías:</p>
 
                     {{#if subcategoria}}
                       <a href="/altaproductos/{{subcategoria.[0].idtienda}}" class="btn btn-outline-warning">Anterior...</a>  
@@ -45,7 +45,7 @@
                           {{/if}}              
 
                           {{#if niveles}}
-                          <a href="/altaproductos/{{niveles.idtienda}}" class="btn-info btn-sm disable">Ir a Categorias...</a>
+                          <a href="/altaproductos/{{niveles.idtienda}}" class="btn-info btn-sm disable">Ir a Categorías...</a>
                           {{/if}}
 
           </div>
@@ -59,7 +59,7 @@
 
                         <div class="row ">
                           <div class="col-md-12">
-                              <span><i><p>Selecciona la categoria e información de tu producto</p></i></span>
+                              <span><i><p>Selecciona la categoría e información de tu producto</p></i></span>
                               <hr>
                           </div>
                         </div>
@@ -68,7 +68,7 @@
                             <div class="">
                                 <div class="info-form">
                                     {{#if niveles}}
-                                      <h5 class="display-5 text-center">Ingresa aqui los datos de tu anuncio!</h5><br><hr>
+                                      <h5 class="display-5 text-center">Ingresa aquí los datos de tu anuncio!</h5><br><hr>
                                       
                               
                                         <form class="md-form" action="/administrartienda/altaproductos/add" method="post"  enctype="multipart/form-data">
@@ -79,13 +79,13 @@
                                               </div>
 
                                               <div class="form-group">
-                                                  <label for="descripcion">Descripcion:</label>
-                                                  <input class="form-control" type="text" name="descripcion" value="" required="required" placeholder="Ingresa descripcion anuncio">
+                                                  <label for="descripcion">Descripción:</label>
+                                                  <input class="form-control" type="text" name="descripcion" value="" required="required" placeholder="Ingresa descripción anuncio">
                                               </div>
 
                                               <div class="form-group">
                                                 <label for="precio">Precio unitario:</label>
-                                                <input class="form-control" type="number" name="precio" value="" required="required" placeholder="Ingresa precio articulo">
+                                                <input class="form-control" type="number" name="precio" value="" required="required" placeholder="Ingresa precio artículo">
                                               </div>
 
                                               <div class="form-group">
@@ -96,9 +96,9 @@
                                               <div class="form-group">
                                                 <label for="envio"><h6>Introduzca datos de envío</h6></label>
                                                 <br><br>
-                                                <label for="origen">Origen del envio</label>
-                                                <select class="form-control" name="origen" placeholder="Selecciona pais" required="required">
-                                                  <option value="Mexico">Mexico</option>
+                                                <label for="origen">Origen del envío</label>
+                                                <select class="form-control" name="origen" placeholder="Selecciona país" required="required">
+                                                  <option value="Mexico">México</option>
                                                   <option value="Estados Unidos">Estados Unidos</option>
                                                   <option value="Europa">Europa</option>
                                                 </select>
@@ -107,19 +107,19 @@
                                               <div class="form-group">
                                                 <label for="tiempo">Periodo de entrega</label>
                                                 <select class="form-control" name="tiempo" placeholder="Selecciona dias" required="required">
-                                                  <option value="5 dias">5 dias</option>
-                                                  <option value="10 dias">10 dias</option>
-                                                  <option value="15 dias">15 dias</option>
+                                                  <option value="5 dias">5 días</option>
+                                                  <option value="10 dias">10 días</option>
+                                                  <option value="15 dias">15 días</option>
                                                 </select>
                                               </div>
 
                                               <div class="form-group">
-                                                <label for="gastosenvio">Gastos de envio:</label>
-                                                <input class="form-control" type="number" name="gastosenvio" value="" required="required" placeholder="Ingresa gastos de envio">
+                                                <label for="gastosenvio">Gastos de envío:</label>
+                                                <input class="form-control" type="number" name="gastosenvio" value="" required="required" placeholder="Ingresa gastos de envío">
                                               </div>
 
                                               <div class="form-group">
-                                                  <label for="transporte">Medio de envio</label>
+                                                  <label for="transporte">Medio de envío</label>
                                                   <select class="form-control" name="transporte" placeholder="Selecciona medio de envio" required="required">
                                                     <option value="Fedex">Fedex</option>
                                                     <option value="DHL">DHL</option>

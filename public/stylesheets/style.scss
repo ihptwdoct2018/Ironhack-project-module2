@@ -1,6 +1,10 @@
 body{
     font-family: 'Montserrat', sans-serif;
 }
+hr{width: 80%;
+
+}
+
 
 .logo{
   width: 125px;
@@ -152,19 +156,18 @@ body{
 }
 
 @media screen and (max-width: 700px) {
+    
+   
     .row, .navbar {
       flex-direction: column;
     }
    }
    
-
-
    .bgdh{
        background-color: rgb(87, 99, 167);
    }
 
-   
-
 .cate{
     margin-top: 50px;
 }
+

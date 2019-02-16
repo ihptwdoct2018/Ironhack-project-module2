@@ -20,32 +20,37 @@
 <nav class="navbar top-nav navbar-nav  navbar-expand-sm sticky-top">
         <a class="navbar-brand" href="/home"><img src="/images/logo.png" class="logo"></a>
 
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#one">
+<div class="container contenedor">
+     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#one">
              <span class="navbar-toggler-icon"><i class="fas fa-bars"></i></span>
         </button>
-
+   
         <form action="/buscaproducto" class="search-bar mb-2 mr-sm-2">
              <input class="form-control mr-sm-2" name="producto" type="search" placeholder="Busca un producto">
              <button class="btn btn-primary" type="submit">Buscar</button>
         </form>
-
+</div>
         <div class="collapse navbar-collapse" id="one">
             <ul class="navbar-nav mr-auto">
-
-
                  <li class="nav-item"><a class="nav-link" href="/perfil"><i class="fas fa-user"></i></a></li>
                  <li class="nav-item"><a class="nav-link" href="/carrito"><i class="fas fa-shopping-cart"></i></a></li>
                  <li class="nav-item"><a class="nav-link" href="/administrartienda"><i class="fas fa-store"></i></a></li>
                  <li class="nav-item"><a class="nav-link" href="/logout"><i class="fas fa-sign-out-alt"></i></a></li>
-
             </ul>
         </div>
 </nav>
 <!-- Category Navbar -->
-<nav>
-        <div class="container border border-top-0 border-left-0 border-right-0">
-            <div class="row top-links">
-              <ul class="nav justify-content-center">
+<nav class="navbar-expand-sm">
+
+<div class="container contenedor">
+  <button class="navbar-toggler" data-toggle="collapse" data-target="#two">
+             <span class="navbar-toggler-icon"><i class="fas fa-bars"></i></span>
+        </button>
+</div>
+      
+    
+            <div class="collapse navbar-collapse " id="two">
+              <ul class="nav justify-content-center top-links">
                   <li class="nav-item col-sm"><a href="/cat/RYC" class="nav-link">Ropa y Calzado</a></li>
                   <li class="nav-item col-sm"><a href="/cat/HYD" class="nav-link">Hogar y Decoración</a></li>
                   <li class="nav-item col-sm"><a href="/cat/JYC" class="nav-link">Joyería y Complementos</a></li>
@@ -53,10 +58,14 @@
                   <li class="nav-item col-sm"><a href="/cat/ACO " class="nav-link">Arte y Colección</a></li>
                   <li class="nav-item col-sm"><a href="/cat/VIN" class="nav-link">Vintage</a></li>
               </ul>
-
-            </div>
-        </div>
+            </div>  
 </nav>
+
+
+
+    
+        <hr>
+
 
         {{{ body }}}
 
