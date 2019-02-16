@@ -7,5 +7,9 @@ siteRoutes.get("/",(req,res,next)=>{
   res.render("homepage");
 })
 
+siteRoutes.get("/404",(req,res,next)=>{
+  res.render("auth/404");
+})
+
 
 module.exports=siteRoutes;
