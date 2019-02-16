@@ -1,6 +1,37 @@
-<div class="container">
-  <br>
-  <h4>Detalle de tus compras.</h4>
+  <!-- left nav bar  -->
+  <div class="container contenedor">
+  	<div class="row shadow-lg cta-card">
+  		<div class="col-md-3 contenedor">
+  		     <div class="list-group ">
+                <a href="/perfil" class="list-group-item list-group-item-action">Perfil</a>
+                <a href="/compras" class="list-group-item list-group-item-action active">Compras</a>
+                <a href="/carrito" class="list-group-item list-group-item-action">Carrito</a>
+                <a href="/administrartienda" class="list-group-item list-group-item-action">Tienda</a>
+              </div>
+              </div>
+                <div class="col-md-9">
+                  <div class="card contenedor">
+                    <div class="card-body">
+
+
+
+
+
+                      <div class="row col-12">
+                        <div class="justify-content-start">
+                            <h4 class="text-secondary"><i class="text-dark">Detalle de tus compras</i></h4>         
+                        </div>          
+                      </div>
+
+                        <hr>
+
+<!-- Card body  -->
+  		            <div class="row bgd">
+  		                <div class="col-sm-12">
+
+                 
+<div class="container contenedor">
+  
   {{#each usercompras}}
     <br>
     <h5>Folio compra: {{this.folio}}</h5>
@@ -25,9 +56,28 @@
       {{/each}}
       </tbody>
       </table>
-    <h5>Costo total compra: ${{this.costototal}}</h5>
+    <h5 class="text-light text-center bg-dark">Costo total compra: ${{this.costototal}}</h5>
     <br>
     <hr>
   {{/each}}
 </div>
-<br><br><br><br>
+  	
+
+  		                </div>
+  		            </div>
+
+  		        </div>
+  		    </div>
+  		</div>
+  	</div>
+  </div>
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>

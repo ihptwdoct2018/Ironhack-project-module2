@@ -109,8 +109,19 @@ body {
 .prod {
   margin: 1%; }
 
+.cvc2 {
+  margin: 10px;
+  width: 50px;
+  border-radius: 5px; }
+
 @media screen and (max-width: 700px) {
   .row, .navbar {
     flex-direction: column; } }
+
+.bgdh {
+  background-color: #5763a7; }
+
+.cate {
+  margin-top: 50px; }
 
 /*# sourceMappingURL=style.css.map */
